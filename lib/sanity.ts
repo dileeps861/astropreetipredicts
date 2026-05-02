@@ -224,13 +224,20 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
       stats: aboutSection.stats,
       featuredReading: featuredService
         ? {
-            eyebrow: "Featured reading",
+            eyebrow: "Featured service",
             title: featuredService.title,
-            description: featuredService.description,
+            description:
+              featuredService.longDescription || featuredService.description,
             marker: featuredService.price.replace(/[^0-9]/g, "") || "1",
             details: [
-              { label: "Focus", value: "Personal" },
-              { label: "Format", value: "Private call" },
+              { label: "Starting from", value: featuredService.price },
+              { label: "Format", value: "WhatsApp / Call" },
+              {
+                label: "Best for",
+                value:
+                  featuredService.bestFor?.slice(0, 2).join(", ") ||
+                  featuredService.detail,
+              },
             ],
           }
         : defaultHomepageData.heroSection.featuredReading,

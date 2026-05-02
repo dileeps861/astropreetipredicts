@@ -26,18 +26,22 @@
       }
     ],
     "featuredReading": {
-      "eyebrow": "Featured reading",
-      "title": "Annual Forecast",
-      "description": "Transit windows, personal themes, and the months that deserve your attention.",
-      "marker": "12",
+      "eyebrow": "Featured service",
+      "title": "Tarot Reading",
+      "description": "Get intuitive guidance for love, relationships, career, and important life decisions with a focused card reading.",
+      "marker": "₹",
       "details": [
         {
-          "label": "Focus",
-          "value": "Timing"
+          "label": "Starting from",
+          "value": "₹799"
         },
         {
           "label": "Format",
-          "value": "Private call"
+          "value": "WhatsApp / Call"
+        },
+        {
+          "label": "Best for",
+          "value": "Love, Career, Relationships"
         }
       ]
     }

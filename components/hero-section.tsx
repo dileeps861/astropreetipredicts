@@ -101,7 +101,7 @@ function FeaturedReadingPanel({
           priority
         />
       </div>
-      <div className="grid grid-cols-2 gap-3 text-sm">
+      <div className="grid gap-3 text-sm sm:grid-cols-3">
         {details.map((detail) => (
           <div
             key={detail.label}
