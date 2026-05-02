@@ -61,11 +61,14 @@ const homepageQuery = defineQuery(`{
     rating,
     featured
   },
-  "videos": *[_type == "video"] | order(_createdAt desc)[0...6] {
+  "videos": *[_type == "video"] | order(displayOrder asc, _createdAt desc)[0...6] {
     title,
+    description,
     provider,
     youtubeUrl,
-    instagramUrl
+    instagramUrl,
+    thumbnailUrl,
+    "thumbnailImageUrl": thumbnailImage.asset->url
   },
   "about": *[_type == "about"][0] {
     name,
@@ -114,9 +117,12 @@ type SanityReview = {
 
 type SanityVideo = {
   title?: string;
+  description?: string;
   provider?: "youtube" | "instagram";
   youtubeUrl?: string;
   instagramUrl?: string;
+  thumbnailUrl?: string;
+  thumbnailImageUrl?: string;
 };
 
 type SanityAbout = {
@@ -293,9 +299,11 @@ function mapVideos(videos: SanityVideo[] = []): Video[] {
     .filter((video) => video.title && (video.youtubeUrl || video.instagramUrl))
     .map((video) => ({
       title: video.title || "",
+      description: video.description,
       provider:
         video.provider ||
         (video.instagramUrl ? "instagram" : video.youtubeUrl ? "youtube" : undefined),
+      thumbnailUrl: video.thumbnailImageUrl || video.thumbnailUrl,
       youtubeUrl: video.youtubeUrl,
       instagramUrl: video.instagramUrl,
     }));

@@ -29,8 +29,10 @@ export type Review = {
 
 export type Video = {
   title: string;
+  description?: string;
   duration?: string;
   provider?: "youtube" | "instagram";
+  thumbnailUrl?: string;
   youtubeUrl?: string;
   instagramUrl?: string;
 };
@@ -261,22 +263,31 @@ export const videosSection = {
   videos: [
     {
       title: "Astropreeti Instagram Reel",
+      description:
+        "A short spiritual guidance reel from Astropreeti Predicts with practical insight for everyday clarity.",
       duration: "Instagram",
       provider: "instagram",
+      thumbnailUrl: "/page_logo.png",
       instagramUrl:
         "https://www.instagram.com/reel/DMQg4uyzhiV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
       title: "Vedic Guidance Reel",
+      description:
+        "A quick Vedic wisdom reel focused on intuitive direction, reflection, and grounded decision-making.",
       duration: "Instagram",
       provider: "instagram",
+      thumbnailUrl: "/page_logo.png",
       instagramUrl:
         "https://www.instagram.com/reel/DNJAx8aTctb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
       title: "How Compatibility Readings Work",
+      description:
+        "An introduction to relationship guidance and how chart patterns can reveal emotional compatibility.",
       duration: "06:45",
       provider: "youtube",
+      thumbnailUrl: "/page_logo.png",
       youtubeUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
     },
   ] satisfies Video[],
