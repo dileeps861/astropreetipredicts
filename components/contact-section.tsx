@@ -17,9 +17,9 @@ export function ContactSection({
   return (
     <section
       id="contact"
-      className="rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(247,239,225,0.055),rgba(255,255,255,0.025))] p-6 shadow-2xl shadow-black/15 sm:p-10"
+      className="rounded-[2rem] border border-white/[0.08] bg-[linear-gradient(135deg,rgba(251,244,229,0.052),rgba(255,255,255,0.02))] p-7 shadow-2xl shadow-black/10 sm:p-12"
     >
-      <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center">
         <SectionHeading
           eyebrow={eyebrow}
           title={title}
@@ -39,7 +39,7 @@ function ContactLink({ href, label }: CtaLink) {
   return (
     <a
       href={href}
-      className="rounded-full border border-white/10 bg-deep-blue/50 px-5 py-4 text-center text-sm font-semibold text-starlight shadow-lg shadow-black/10 transition hover:border-gold/60 hover:text-gold"
+      className="rounded-full border border-white/[0.08] bg-deep-blue/45 px-5 py-4 text-center text-sm font-semibold text-starlight shadow-lg shadow-black/[0.08] transition hover:border-gold/50 hover:text-gold-soft"
     >
       {label}
     </a>

@@ -18,7 +18,7 @@ export default async function Home() {
   } = await getHomepageData();
 
   return (
-    <div className="space-y-20 sm:space-y-28">
+    <div className="space-y-24 sm:space-y-36">
       <AnimatedSection>
         <HeroSection {...heroSection} />
       </AnimatedSection>

@@ -10,6 +10,18 @@ function requiredEnv(name: string) {
   return value;
 }
 
-export const sanityProjectId = requiredEnv("SANITY_STUDIO_PROJECT_ID");
+function requiredProjectId() {
+  const value = requiredEnv("SANITY_STUDIO_PROJECT_ID");
+
+  if (!/^[a-z0-9-]+$/.test(value)) {
+    throw new Error(
+      "Invalid SANITY_STUDIO_PROJECT_ID. Sanity project IDs can only include lowercase letters, numbers, and dashes.",
+    );
+  }
+
+  return value;
+}
+
+export const sanityProjectId = requiredProjectId();
 export const sanityDataset =
   process.env.SANITY_STUDIO_DATASET || "production";

@@ -16,7 +16,7 @@ export function ServicesSection({
   services,
 }: ServicesSectionProps) {
   return (
-    <section id="services" className="space-y-10">
+    <section id="services" className="space-y-12">
       <SectionHeading
         eyebrow={eyebrow}
         title={title}

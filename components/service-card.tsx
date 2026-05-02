@@ -23,26 +23,26 @@ export function ServiceCard({
 
   return (
     <motion.article
-      className="group flex min-h-72 flex-col rounded-lg border border-white/10 bg-white/[0.045] p-5 shadow-xl shadow-black/15 transition hover:border-gold/35 hover:bg-white/[0.065] sm:min-h-80 sm:p-6"
+      className="group flex min-h-72 flex-col rounded-2xl border border-white/[0.08] bg-white/[0.035] p-6 shadow-xl shadow-black/10 transition hover:border-gold/30 hover:bg-white/[0.055] sm:min-h-80 sm:p-7"
       whileHover={{ y: -3 }}
       transition={{ duration: 0.22, ease: "easeOut" }}
     >
-      <p className="text-xs font-semibold uppercase text-gold">{detail}</p>
-      <h3 className="mt-4 text-xl font-semibold text-starlight sm:text-2xl">
+      <p className="text-xs font-semibold uppercase text-gold-soft">{detail}</p>
+      <h3 className="mt-5 text-2xl font-semibold text-starlight">
         {title}
       </h3>
-      <p className="mt-4 text-sm text-muted-foreground sm:mt-5">
+      <p className="mt-5 text-sm text-muted-foreground">
         {description}
       </p>
-      <div className="mt-auto flex flex-col gap-4 pt-7 sm:flex-row sm:items-center sm:justify-between sm:pt-8">
-        <span className="text-xl font-semibold text-gold sm:text-2xl">
+      <div className="mt-auto flex flex-col gap-5 pt-8">
+        <span className="text-2xl font-semibold text-gold-soft">
           {price}
         </span>
         <a
           href={inquiryUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-10 items-center justify-center rounded-full border border-gold/45 px-4 text-sm font-semibold text-gold transition group-hover:bg-gold group-hover:text-deep-blue"
+          className="inline-flex h-11 items-center justify-center rounded-full border border-gold/35 px-5 text-sm font-semibold text-gold-soft transition group-hover:bg-gold group-hover:text-deep-blue"
         >
           Inquire Now
         </a>

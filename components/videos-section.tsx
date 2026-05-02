@@ -27,7 +27,7 @@ export function VideosSection({
   );
 
   return (
-    <section id="videos" className="space-y-8">
+    <section id="videos" className="space-y-12">
       <SectionHeading
         eyebrow={eyebrow}
         title={title}

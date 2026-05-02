@@ -20,7 +20,7 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex flex-1">
-            <PageContainer className="py-8 sm:py-12">
+            <PageContainer className="py-10 sm:py-16">
               {children}
             </PageContainer>
           </main>

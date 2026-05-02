@@ -31,3 +31,14 @@ if (!projectId || projectId === "replace-me") {
   );
   process.exit(1);
 }
+
+if (!/^[a-z0-9-]+$/.test(projectId)) {
+  console.error(
+    [
+      "Invalid SANITY_STUDIO_PROJECT_ID.",
+      "Sanity project IDs can only include lowercase letters, numbers, and dashes.",
+      `Current value: ${projectId}`,
+    ].join("\n"),
+  );
+  process.exit(1);
+}

@@ -16,7 +16,7 @@ export function TestimonialsSection({
   reviews,
 }: TestimonialsSectionProps) {
   return (
-    <section className="space-y-8">
+    <section className="space-y-12">
       <SectionHeading
         eyebrow={eyebrow}
         title={title}

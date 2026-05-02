@@ -25,7 +25,9 @@ const dataset =
   process.env.SANITY_STUDIO_DATASET ||
   "production";
 
-export const sanityClient = projectId
+const isValidSanityProjectId = (value: string) => /^[a-z0-9-]+$/.test(value);
+
+export const sanityClient = projectId && isValidSanityProjectId(projectId)
   ? createClient({
       projectId,
       dataset,
