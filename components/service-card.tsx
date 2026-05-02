@@ -16,7 +16,6 @@ export function ServiceCard({
   detail,
   badge,
   actionLabel = "Inquire Now",
-  subServices,
   whatsappTemplate,
   whatsappPhoneNumber,
   whatsappUrl,
@@ -39,7 +38,7 @@ export function ServiceCard({
 
   return (
     <motion.article
-      className="group relative flex min-h-[21rem] cursor-pointer flex-col overflow-hidden rounded-lg border border-gold/25 bg-[#fff4dd] p-5 shadow-[0_16px_42px_rgba(159,118,25,0.07)] outline-none transition hover:-translate-y-0.5 hover:border-gold/50 hover:bg-[#fff8e8] focus-visible:border-gold/50 focus-visible:ring-2 focus-visible:ring-gold/20"
+      className="group relative flex min-h-[18rem] cursor-pointer flex-col overflow-hidden rounded-lg border border-gold/25 bg-[#fff4dd] p-4 shadow-[0_14px_36px_rgba(159,118,25,0.07)] outline-none transition hover:-translate-y-0.5 hover:border-gold/50 hover:bg-[#fff8e8] focus-visible:border-gold/50 focus-visible:ring-2 focus-visible:ring-gold/20 sm:p-5"
       role="button"
       tabIndex={0}
       whileHover={{ y: -3 }}
@@ -53,10 +52,10 @@ export function ServiceCard({
           {badge}
         </span>
       ) : null}
-      <div className="relative mx-auto mt-4 grid h-16 w-16 place-items-center rounded-full border border-gold/45 bg-[#fffaf0] text-2xl font-semibold text-gold shadow-inner shadow-gold/10">
+      <div className="relative mx-auto mt-3 grid h-14 w-14 place-items-center rounded-full border border-gold/45 bg-[#fffaf0] text-xl font-semibold text-gold shadow-inner shadow-gold/10">
         {title.slice(0, 1)}
       </div>
-      <p className="relative mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-gold">
+      <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-gold">
         {detail}
       </p>
       <h3 className="relative mt-3 text-xl font-semibold leading-tight text-starlight">
@@ -65,19 +64,7 @@ export function ServiceCard({
       <p className="relative mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">
         {description}
       </p>
-      {subServices?.length ? (
-        <div className="relative mt-4 flex flex-wrap gap-2 border-t border-gold/20 pt-4">
-          {subServices.slice(0, 3).map((service) => (
-            <span
-              key={service.title}
-              className="rounded-full border border-gold/15 bg-white/55 px-3 py-1 text-xs font-semibold text-starlight/75"
-            >
-              {service.title}
-            </span>
-          ))}
-        </div>
-      ) : null}
-      <div className="relative mt-auto flex flex-col gap-3 pt-5">
+      <div className="relative mt-auto flex flex-col gap-3 pt-4">
         <span className="text-xl font-semibold text-gold">
           {price}
         </span>
