@@ -1,3 +1,3 @@
 export const siteConfig = {
-  name: "Astrology",
+  name: "Astropreeti Predicts",
 };

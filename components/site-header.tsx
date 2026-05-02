@@ -1,14 +1,25 @@
+import Image from "next/image";
 import { PageContainer } from "@/components/page-container";
 import { siteConfig } from "@/lib/site";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-20 border-b border-white/[0.08] bg-deep-blue/65 backdrop-blur-xl">
-      <PageContainer className="flex h-[4.5rem] items-center justify-between">
-        <a href="#" className="text-base font-semibold text-starlight sm:text-lg">
-          {siteConfig.name}
+    <header className="sticky top-0 z-20 border-b border-gold/15 bg-background/90 backdrop-blur-xl">
+      <PageContainer className="flex h-20 items-center justify-between">
+        <a href="#" className="flex items-center gap-3">
+          <Image
+            src="/page_logo.png"
+            alt="Astropreeti Predicts logo"
+            width={44}
+            height={44}
+            className="rounded-xl border border-gold/20 bg-white"
+            priority
+          />
+          <span className="text-base font-semibold text-gold sm:text-xl">
+            {siteConfig.name}
+          </span>
         </a>
-        <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-8 text-sm font-semibold text-muted-foreground md:flex">
           <a className="transition hover:text-gold" href="#services">
             Services
           </a>

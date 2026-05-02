@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CtaLink, FeaturedReading, Stat } from "@/lib/homepage-data";
 
 type HeroSectionProps = {
@@ -20,37 +21,40 @@ export function HeroSection({
   featuredReading,
 }: HeroSectionProps) {
   return (
-    <section className="grid overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[radial-gradient(circle_at_18%_10%,rgba(215,187,115,0.12),transparent_26rem),linear-gradient(132deg,rgba(38,22,79,0.78),rgba(16,23,53,0.86)_52%,rgba(6,7,19,0.94))] shadow-2xl shadow-black/15 lg:min-h-[660px] lg:grid-cols-[1.12fr_0.88fr]">
-      <div className="flex flex-col justify-between px-6 py-12 sm:px-12 sm:py-16 lg:px-14">
+    <section className="grid gap-12 py-6 lg:min-h-[680px] lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-10">
+      <div className="flex flex-col justify-between">
         <div className="max-w-4xl">
-          <p className="text-xs font-semibold uppercase text-gold-soft">
+          <p className="inline-flex rounded-full border border-gold/20 bg-white/70 px-5 py-3 text-sm font-semibold text-gold shadow-sm shadow-gold/5">
             {eyebrow}
           </p>
-          <h1 className="mt-6 max-w-5xl text-5xl font-semibold text-starlight sm:text-7xl lg:text-7xl">
+          <h1 className="mt-8 max-w-5xl text-5xl font-semibold text-starlight sm:text-7xl lg:text-7xl">
             {title}
           </h1>
-          <p className="mt-7 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-7 max-w-3xl text-lg text-muted-foreground sm:text-xl">
             {description}
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-3xl">
             <a
               href={primaryCta.href}
-              className="inline-flex h-12 items-center justify-center rounded-full bg-gold px-7 text-sm font-semibold text-deep-blue shadow-lg shadow-gold/10 transition hover:bg-gold-soft"
+              className="inline-flex h-16 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#f3d96f,#d7b33f)] px-7 text-base font-semibold text-starlight shadow-xl shadow-gold/15 transition hover:-translate-y-0.5"
             >
               {primaryCta.label}
             </a>
             <a
               href={secondaryCta.href}
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.025] px-7 text-sm font-semibold text-starlight transition hover:border-gold/55 hover:text-gold-soft"
+              className="inline-flex h-16 items-center justify-center rounded-2xl border border-gold/25 bg-white/80 px-7 text-base font-semibold text-starlight shadow-xl shadow-gold/10 transition hover:-translate-y-0.5 hover:border-gold/45 hover:text-gold"
             >
               {secondaryCta.label}
             </a>
           </div>
         </div>
-        <div className="mt-12 grid gap-4 border-t border-white/[0.08] pt-7 sm:mt-16 sm:grid-cols-3 lg:max-w-2xl">
+        <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-3 lg:max-w-3xl">
           {stats.map((stat) => (
-            <div key={stat.label} className="rounded-2xl bg-white/[0.035] p-4">
-              <p className="text-2xl font-semibold text-gold-soft">
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-gold/15 bg-white/80 p-5 shadow-sm shadow-gold/5"
+            >
+              <p className="text-2xl font-semibold text-gold">
                 {stat.value}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
@@ -61,7 +65,8 @@ export function HeroSection({
         </div>
       </div>
 
-      <div className="border-t border-white/[0.08] bg-deep-blue/25 p-5 sm:p-8 lg:border-l lg:border-t-0 lg:p-10">
+      <div className="relative">
+        <div className="absolute -left-4 top-12 hidden h-[74%] w-[84%] -rotate-3 rounded-[2rem] bg-gold/10 lg:block" />
         <FeaturedReadingPanel {...featuredReading} />
       </div>
     </section>
@@ -72,13 +77,13 @@ function FeaturedReadingPanel({
   eyebrow,
   title,
   description,
-  marker,
   details,
 }: FeaturedReading) {
   return (
-    <div className="flex h-full min-h-[380px] flex-col justify-between rounded-[1.5rem] border border-white/[0.08] bg-white/[0.035] p-6 sm:min-h-[460px] sm:p-8">
+    <div className="relative flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[2rem] border border-gold/20 bg-white/90 p-6 shadow-2xl shadow-gold/10 sm:p-8">
+      <div className="absolute inset-x-8 top-8 h-40 rounded-full bg-gold/10 blur-3xl" />
       <div>
-        <p className="text-xs font-semibold uppercase text-gold-soft">
+        <p className="text-xs font-semibold uppercase text-gold">
           {eyebrow}
         </p>
         <h2 className="mt-5 text-3xl font-semibold text-starlight">
@@ -86,24 +91,21 @@ function FeaturedReadingPanel({
         </h2>
         <p className="mt-4 text-base text-muted-foreground">{description}</p>
       </div>
-      <div className="my-10 grid flex-1 place-items-center">
-        <div className="relative aspect-square w-full max-w-72 rounded-full border border-gold/30 bg-deep-blue/20">
-          <div className="absolute inset-8 rounded-full border border-white/[0.12]" />
-          <div className="absolute inset-16 rounded-full border border-gold/20" />
-          <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/[0.08]" />
-          <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/[0.08]" />
-          <div className="absolute inset-0 grid place-items-center">
-            <span className="text-5xl font-semibold text-gold-soft">
-              {marker}
-            </span>
-          </div>
-        </div>
+      <div className="relative my-8 grid flex-1 place-items-center">
+        <Image
+          src="/page_logo.png"
+          alt="Astropreeti Predicts logo"
+          width={420}
+          height={420}
+          className="w-full max-w-sm rounded-[1.75rem] object-cover"
+          priority
+        />
       </div>
       <div className="grid grid-cols-2 gap-3 text-sm">
         {details.map((detail) => (
           <div
             key={detail.label}
-            className="rounded-2xl border border-white/[0.08] bg-deep-blue/45 p-4"
+            className="rounded-2xl border border-gold/15 bg-[#fffaf0]/90 p-4"
           >
             <p className="text-muted-foreground">{detail.label}</p>
             <p className="mt-1 font-semibold text-starlight">{detail.value}</p>

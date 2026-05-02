@@ -5,8 +5,8 @@ import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Astrology",
-  description: "Astrology app placeholder",
+  title: "Astropreeti Predicts",
+  description: "Vedic wisdom, clarity, and guidance.",
 };
 
 export default function RootLayout({

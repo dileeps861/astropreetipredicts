@@ -11,10 +11,10 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className="max-w-3xl">
-      <p className="text-xs font-semibold uppercase text-gold-soft">
+      <p className="inline-flex rounded-full border border-gold/20 bg-white/65 px-4 py-2 text-xs font-semibold uppercase text-gold shadow-sm shadow-gold/5">
         {eyebrow}
       </p>
-      <h2 className="mt-4 max-w-2xl text-3xl font-semibold text-starlight sm:text-5xl">
+      <h2 className="mt-5 max-w-2xl text-3xl font-semibold text-starlight sm:text-5xl">
         {title}
       </h2>
       <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
