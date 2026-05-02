@@ -1,0 +1,67 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import type { Video } from "@/lib/homepage-data";
+import { Modal } from "@/components/modal";
+import { SectionHeading } from "@/components/section-heading";
+import { VideoCard } from "@/components/video-card";
+import { getYouTubeEmbedUrl } from "@/lib/youtube";
+
+type VideosSectionProps = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  videos: Video[];
+};
+
+export function VideosSection({
+  eyebrow,
+  title,
+  description,
+  videos,
+}: VideosSectionProps) {
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
+  const embedUrl = useMemo(
+    () => getYouTubeEmbedUrl(selectedVideo?.youtubeUrl),
+    [selectedVideo],
+  );
+
+  return (
+    <section id="videos" className="space-y-8">
+      <SectionHeading
+        eyebrow={eyebrow}
+        title={title}
+        description={description}
+      />
+      <div className="grid gap-5 md:grid-cols-3">
+        {videos.map((video, index) => (
+          <VideoCard
+            key={video.title}
+            index={index}
+            onPlay={setSelectedVideo}
+            {...video}
+          />
+        ))}
+      </div>
+      <Modal
+        isOpen={Boolean(selectedVideo)}
+        title={selectedVideo?.title || "Video"}
+        onClose={() => setSelectedVideo(null)}
+      >
+        {embedUrl ? (
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="aspect-video w-full"
+            src={embedUrl}
+            title={selectedVideo?.title || "YouTube video"}
+          />
+        ) : (
+          <div className="grid aspect-video place-items-center px-6 text-center text-muted-foreground">
+            Add a valid YouTube URL in Sanity to preview this video.
+          </div>
+        )}
+      </Modal>
+    </section>
+  );
+}

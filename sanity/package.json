@@ -1,0 +1,10 @@
+{
+  "name": "astropreetipredicts-sanity",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "@sanity/vision": "^5.23.0",
+    "sanity": "^5.23.0",
+    "styled-components": "^6.4.1"
+  }
+}
