@@ -8,9 +8,16 @@ export type Service = {
   description: string;
   price: string;
   detail: string;
+  subServices?: ServiceSubService[];
   whatsappTemplate?: string;
   whatsappUrl?: string;
   slug?: string;
+};
+
+export type ServiceSubService = {
+  title: string;
+  description: string;
+  price?: string;
 };
 
 export type Review = {
@@ -107,10 +114,10 @@ export const stats: Stat[] = [
 ];
 
 export const heroSection = {
-  eyebrow: "Private astrology readings",
-  title: "Clarity for love, timing, and your next chapter.",
+  eyebrow: "Vedic wisdom, clarity, guidance",
+  title: "Guidance for love, energy, spaces, and your next chapter.",
   description:
-    "Premium chart readings designed to translate complex planetary patterns into grounded decisions, useful timing, and personal direction.",
+    "Personal consultations across astrology, tarot, vastu, numerology, and Reiki healing, shaped to bring calm clarity and practical direction.",
   primaryCta: {
     label: "Explore Services",
     href: "#services",
@@ -135,45 +142,74 @@ export const heroSection = {
 
 export const servicesSection = {
   eyebrow: "Services",
-  title: "Focused sessions with a polished, personal feel.",
+  title: "Choose the guidance that fits your question.",
   description:
-    "Each reading is structured around a clear question, a refined interpretation, and a practical takeaway you can actually use.",
+    "Every service can be edited in Sanity, including pricing, currency, descriptions, WhatsApp templates, and detailed sub-services.",
   services: [
     {
-      title: "Natal Blueprint",
+      title: "Tarot",
       description:
-        "A complete birth chart interpretation across identity, emotional rhythm, strengths, and recurring life themes.",
-      price: "$95",
-      detail: "75 min session",
+        "Intuitive card guidance for emotional clarity, decision-making, and the patterns influencing your current situation.",
+      price: "₹1,100",
+      detail: "Focused card reading",
       whatsappTemplate:
-        "Hi, I would like to inquire about a Natal Blueprint reading.",
+        "Hi, I would like to inquire about a Tarot reading.",
+      subServices: [
+        {
+          title: "Love Reading",
+          description:
+            "Clarity around attraction, emotional availability, and the energy surrounding a romantic connection.",
+          price: "₹799",
+        },
+        {
+          title: "Relationship Reading",
+          description:
+            "A deeper look at communication patterns, current blocks, and the direction of an existing relationship.",
+          price: "₹999",
+        },
+        {
+          title: "Career Reading",
+          description:
+            "Guidance for career decisions, workplace energy, opportunities, and next-step timing.",
+          price: "₹999",
+        },
+      ],
     },
     {
-      title: "Relationship Synastry",
+      title: "Vastu",
       description:
-        "A two-chart reading for emotional patterns, communication style, chemistry, and long-term compatibility.",
-      price: "$125",
-      detail: "2 charts included",
+        "Space and direction guidance for homes or workplaces, focused on energetic balance, flow, and practical remedies.",
+      price: "₹5,100",
+      detail: "Home or workspace review",
       whatsappTemplate:
-        "Hi, I would like to inquire about a Relationship Synastry reading.",
+        "Hi, I would like to inquire about a Vastu consultation.",
     },
     {
-      title: "Career Timing",
+      title: "Numerology",
       description:
-        "Astrological guidance for work decisions, visibility windows, transitions, and purpose-aligned growth.",
-      price: "$110",
-      detail: "Includes timeline",
+        "Name, date, and number analysis to understand personal patterns, favorable vibrations, and alignment options.",
+      price: "₹1,500",
+      detail: "Name and date analysis",
       whatsappTemplate:
-        "Hi, I would like to inquire about a Career Timing reading.",
+        "Hi, I would like to inquire about a Numerology consultation.",
     },
     {
-      title: "Annual Forecast",
+      title: "Astrology",
       description:
-        "A refined look at the next twelve months with major transits, key dates, and recommended focus areas.",
-      price: "$165",
-      detail: "12 month outlook",
+        "Birth chart and timing guidance for relationships, career, family, health themes, and important life decisions.",
+      price: "₹2,100",
+      detail: "Chart-based consultation",
       whatsappTemplate:
-        "Hi, I would like to inquire about an Annual Forecast reading.",
+        "Hi, I would like to inquire about an Astrology consultation.",
+    },
+    {
+      title: "Reiki Healing",
+      description:
+        "Gentle energy healing support for emotional release, grounding, balance, and spiritual restoration.",
+      price: "₹1,800",
+      detail: "Energy healing session",
+      whatsappTemplate:
+        "Hi, I would like to inquire about a Reiki Healing session.",
     },
   ] satisfies Service[],
 };

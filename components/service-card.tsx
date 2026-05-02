@@ -11,6 +11,7 @@ export function ServiceCard({
   description,
   price,
   detail,
+  subServices,
   whatsappTemplate,
   whatsappUrl,
 }: ServiceCardProps) {
@@ -34,6 +35,27 @@ export function ServiceCard({
       <p className="mt-5 text-sm text-muted-foreground">
         {description}
       </p>
+      {subServices?.length ? (
+        <div className="mt-6 space-y-3 border-t border-gold/15 pt-5">
+          {subServices.map((service) => (
+            <div key={service.title}>
+              <div className="flex items-start justify-between gap-4">
+                <h4 className="text-sm font-semibold text-starlight">
+                  {service.title}
+                </h4>
+                {service.price ? (
+                  <span className="shrink-0 text-sm font-semibold text-gold">
+                    {service.price}
+                  </span>
+                ) : null}
+              </div>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : null}
       <div className="mt-auto flex flex-col gap-5 pt-8">
         <span className="text-2xl font-semibold text-gold">
           {price}

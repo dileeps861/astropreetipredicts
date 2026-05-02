@@ -38,10 +38,19 @@ export const sanityClient = projectId && isValidSanityProjectId(projectId)
 
 const homepageQuery = defineQuery(`{
   "services": *[_type == "service" && isActive != false] | order(_createdAt asc) {
+    displayOrder,
     title,
     "slug": slug.current,
     description,
+    detail,
     price,
+    currency,
+    subServices[] {
+      title,
+      description,
+      price,
+      currency
+    },
     whatsappTemplate,
     isActive
   },
@@ -63,16 +72,34 @@ const homepageQuery = defineQuery(`{
     clientsServed,
     accuracy,
     "profileImageUrl": profileImage.asset->url
+  },
+  "homepage": *[_type == "homepage"][0] {
+    hero,
+    services,
+    testimonials,
+    videos,
+    contact
   }
 }`);
 
 type SanityService = {
+  displayOrder?: number;
   title?: string;
   slug?: string;
   description?: string;
+  detail?: string;
   price?: number;
+  currency?: string;
+  subServices?: SanitySubService[];
   whatsappTemplate?: string;
   isActive?: boolean;
+};
+
+type SanitySubService = {
+  title?: string;
+  description?: string;
+  price?: number;
+  currency?: string;
 };
 
 type SanityReview = {
@@ -97,11 +124,36 @@ type SanityAbout = {
   profileImageUrl?: string;
 };
 
+type SanityCta = {
+  label?: string;
+  href?: string;
+};
+
+type SanitySectionCopy = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+type SanityHeroCopy = SanitySectionCopy & {
+  primaryCta?: SanityCta;
+  secondaryCta?: SanityCta;
+};
+
+type SanityHomepage = {
+  hero?: SanityHeroCopy;
+  services?: SanitySectionCopy;
+  testimonials?: SanitySectionCopy;
+  videos?: SanitySectionCopy;
+  contact?: SanitySectionCopy;
+};
+
 type HomepageQueryResult = {
   services?: SanityService[];
   reviews?: SanityReview[];
   videos?: SanityVideo[];
   about?: SanityAbout | null;
+  homepage?: SanityHomepage | null;
 };
 
 export async function getHomepageData(): Promise<HomepageData> {
@@ -123,11 +175,21 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
   const reviews = mapReviews(data.reviews);
   const videos = mapVideos(data.videos);
   const featuredService = services[0];
+  const homepage = data.homepage;
 
   return {
     ...defaultHomepageData,
     heroSection: {
       ...defaultHomepageData.heroSection,
+      ...pickSectionCopy(homepage?.hero),
+      primaryCta: {
+        ...defaultHomepageData.heroSection.primaryCta,
+        ...pickCta(homepage?.hero?.primaryCta),
+      },
+      secondaryCta: {
+        ...defaultHomepageData.heroSection.secondaryCta,
+        ...pickCta(homepage?.hero?.secondaryCta),
+      },
       stats: aboutSection.stats,
       featuredReading: featuredService
         ? {
@@ -144,6 +206,7 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
     },
     servicesSection: {
       ...defaultHomepageData.servicesSection,
+      ...pickSectionCopy(homepage?.services),
       services: services.length
         ? services
         : defaultHomepageData.servicesSection.services,
@@ -151,13 +214,19 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
     aboutSection,
     testimonialsSection: {
       ...defaultHomepageData.testimonialsSection,
+      ...pickSectionCopy(homepage?.testimonials),
       reviews: reviews.length
         ? reviews
         : defaultHomepageData.testimonialsSection.reviews,
     },
     videosSection: {
       ...defaultHomepageData.videosSection,
+      ...pickSectionCopy(homepage?.videos),
       videos: videos.length ? videos : defaultHomepageData.videosSection.videos,
+    },
+    contactSection: {
+      ...defaultHomepageData.contactSection,
+      ...pickSectionCopy(homepage?.contact),
     },
   };
 }
@@ -165,17 +234,41 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
 function mapServices(services: SanityService[] = []): Service[] {
   return services
     .filter((service) => service.title && service.description)
+    .sort(
+      (left, right) => (left.displayOrder || 0) - (right.displayOrder || 0),
+    )
     .map((service) => ({
       title: service.title || "",
       description: service.description || "",
-      price: formatPrice(service.price),
-      detail: service.whatsappTemplate ? "WhatsApp booking" : "Available session",
+      price: formatPrice(service.price, service.currency),
+      detail:
+        service.detail ||
+        (service.subServices?.length
+          ? `${service.subServices.length} focused options`
+          : "Available session"),
+      subServices: mapSubServices(service.subServices, service.currency),
       whatsappTemplate: service.whatsappTemplate,
       whatsappUrl: createWhatsAppInquiryUrl({
         serviceTitle: service.title || "",
         template: service.whatsappTemplate,
       }),
       slug: service.slug,
+    }));
+}
+
+function mapSubServices(
+  subServices: SanitySubService[] = [],
+  fallbackCurrency?: string,
+) {
+  return subServices
+    .filter((service) => service.title && service.description)
+    .map((service) => ({
+      title: service.title || "",
+      description: service.description || "",
+      price:
+        typeof service.price === "number"
+          ? formatPrice(service.price, service.currency || fallbackCurrency)
+          : undefined,
     }));
 }
 
@@ -233,16 +326,35 @@ function mapAboutSection(about?: SanityAbout | null) {
   };
 }
 
-function formatPrice(price?: number) {
+function formatPrice(price?: number, currency = "INR") {
   if (typeof price !== "number") {
     return "Contact";
   }
 
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat(currency === "INR" ? "en-IN" : "en-US", {
     style: "currency",
-    currency: "USD",
+    currency,
     maximumFractionDigits: 0,
   }).format(price);
+}
+
+function pickSectionCopy(section?: SanitySectionCopy) {
+  return Object.fromEntries(
+    Object.entries({
+      eyebrow: section?.eyebrow,
+      title: section?.title,
+      description: section?.description,
+    }).filter(([, value]) => Boolean(value)),
+  );
+}
+
+function pickCta(cta?: SanityCta) {
+  return Object.fromEntries(
+    Object.entries({
+      label: cta?.label,
+      href: cta?.href,
+    }).filter(([, value]) => Boolean(value)),
+  );
 }
 
 function formatYears(value?: number) {

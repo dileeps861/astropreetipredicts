@@ -30,6 +30,20 @@ The frontend reads the same Sanity env values server-side, and also supports
 `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, and
 `NEXT_PUBLIC_SANITY_API_VERSION` when deploying.
 
+## CMS Content
+
+Sanity stores editable content as structured JSON-like documents. The homepage
+uses:
+
+- `Homepage Content` for editable page copy and CTA labels.
+- `Service` documents for service details, pricing, currency, WhatsApp copy,
+  ordering, and optional sub-services like Tarot love, relationship, and career
+  readings.
+- `About`, `Review`, and `Video` documents for the other homepage sections.
+
+If Sanity is not configured or has no content yet, the app uses fallback content
+from `lib/homepage-data.ts`.
+
 ## Structure
 
 ```text
