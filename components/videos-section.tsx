@@ -62,7 +62,7 @@ export function VideosSection({
           />
         ) : (
           <div className="grid aspect-video place-items-center px-6 text-center text-muted-foreground">
-            Add a valid Instagram Reel or YouTube URL in Sanity to preview this video.
+            This video preview is currently unavailable.
           </div>
         )}
       </Modal>
