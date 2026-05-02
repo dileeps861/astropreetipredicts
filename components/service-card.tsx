@@ -13,11 +13,13 @@ export function ServiceCard({
   detail,
   subServices,
   whatsappTemplate,
+  whatsappPhoneNumber,
   whatsappUrl,
 }: ServiceCardProps) {
   const inquiryUrl =
     whatsappUrl ||
     createWhatsAppInquiryUrl({
+      phoneNumber: whatsappPhoneNumber,
       serviceTitle: title,
       template: whatsappTemplate,
     });

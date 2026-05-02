@@ -125,6 +125,31 @@ export const homepageType = defineType({
           type: "text",
           rows: 3,
         }),
+        defineField({
+          name: "whatsappPhoneNumber",
+          title: "WhatsApp Phone Number",
+          type: "string",
+          description:
+            "Digits only or formatted phone number. Used for service inquiry buttons.",
+        }),
+        defineField({
+          name: "links",
+          title: "Contact Links",
+          type: "array",
+          of: [
+            {
+              title: "Contact Link",
+              type: "object",
+              fields: ctaFields,
+              preview: {
+                select: {
+                  title: "label",
+                  subtitle: "href",
+                },
+              },
+            },
+          ],
+        }),
       ],
     }),
   ],

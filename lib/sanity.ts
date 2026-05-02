@@ -83,7 +83,16 @@ const homepageQuery = defineQuery(`{
     services,
     testimonials,
     videos,
-    contact
+    contact {
+      eyebrow,
+      title,
+      description,
+      whatsappPhoneNumber,
+      links[] {
+        label,
+        href
+      }
+    }
   }
 }`);
 
@@ -155,7 +164,10 @@ type SanityHomepage = {
   services?: SanitySectionCopy;
   testimonials?: SanitySectionCopy;
   videos?: SanitySectionCopy;
-  contact?: SanitySectionCopy;
+  contact?: SanitySectionCopy & {
+    whatsappPhoneNumber?: string;
+    links?: SanityCta[];
+  };
 };
 
 type HomepageQueryResult = {
@@ -181,11 +193,14 @@ export async function getHomepageData(): Promise<HomepageData> {
 
 function mapHomepageData(data: HomepageQueryResult): HomepageData {
   const aboutSection = mapAboutSection(data.about);
-  const services = mapServices(data.services);
+  const homepage = data.homepage;
+  const services = mapServices(
+    data.services,
+    homepage?.contact?.whatsappPhoneNumber,
+  );
   const reviews = mapReviews(data.reviews);
   const videos = mapVideos(data.videos);
   const featuredService = services[0];
-  const homepage = data.homepage;
 
   return {
     ...defaultHomepageData,
@@ -237,11 +252,18 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
     contactSection: {
       ...defaultHomepageData.contactSection,
       ...pickSectionCopy(homepage?.contact),
+      whatsappPhoneNumber:
+        homepage?.contact?.whatsappPhoneNumber ||
+        defaultHomepageData.contactSection.whatsappPhoneNumber,
+      links: mapContactLinks(homepage?.contact?.links),
     },
   };
 }
 
-function mapServices(services: SanityService[] = []): Service[] {
+function mapServices(
+  services: SanityService[] = [],
+  whatsappPhoneNumber?: string,
+): Service[] {
   return services
     .filter((service) => service.title && service.description)
     .sort(
@@ -258,12 +280,25 @@ function mapServices(services: SanityService[] = []): Service[] {
           : "Available session"),
       subServices: mapSubServices(service.subServices, service.currency),
       whatsappTemplate: service.whatsappTemplate,
+      whatsappPhoneNumber,
       whatsappUrl: createWhatsAppInquiryUrl({
+        phoneNumber: whatsappPhoneNumber,
         serviceTitle: service.title || "",
         template: service.whatsappTemplate,
       }),
       slug: service.slug,
     }));
+}
+
+function mapContactLinks(links: SanityCta[] = []) {
+  const mappedLinks = links
+    .filter((link) => link.label && link.href)
+    .map((link) => ({
+      label: link.label || "",
+      href: link.href || "",
+    }));
+
+  return mappedLinks.length ? mappedLinks : defaultHomepageData.contactSection.links;
 }
 
 function mapSubServices(

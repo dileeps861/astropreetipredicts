@@ -36,13 +36,17 @@ Sanity stores editable content as structured JSON-like documents. The homepage
 uses:
 
 - `Homepage Content` for editable page copy and CTA labels.
+- `Homepage Content > Contact Section` for editable contact links and the
+  WhatsApp phone number used by service inquiry buttons.
 - `Service` documents for service details, pricing, currency, WhatsApp copy,
   ordering, and optional sub-services like Tarot love, relationship, and career
   readings.
-- `About`, `Review`, and `Video` documents for the other homepage sections.
+- `About` for name, bio, experience years, clients served, clarity rate, and
+  profile image.
+- `Review` and `Video` documents for the other homepage sections.
 
 If Sanity is not configured or has no content yet, the app uses fallback content
-from `lib/homepage-data.ts`.
+from `content/homepage.json`.
 
 ## Structure
 
