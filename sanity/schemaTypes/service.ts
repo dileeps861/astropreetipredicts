@@ -29,6 +29,14 @@ export const serviceType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "longDescription",
+      title: "Detailed Description",
+      type: "text",
+      rows: 6,
+      description:
+        "Longer customer-facing explanation shown in the service detail popup.",
+    }),
+    defineField({
       name: "detail",
       title: "Short Detail",
       type: "string",
@@ -55,6 +63,20 @@ export const serviceType = defineType({
         ],
       },
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "highlights",
+      title: "Highlights",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "Short bullets explaining what the session covers.",
+    }),
+    defineField({
+      name: "bestFor",
+      title: "Best For",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "Short bullets explaining who should choose this service.",
     }),
     defineField({
       name: "subServices",

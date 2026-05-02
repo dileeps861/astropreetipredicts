@@ -42,9 +42,12 @@ const homepageQuery = defineQuery(`{
     title,
     "slug": slug.current,
     description,
+    longDescription,
     detail,
     price,
     currency,
+    highlights,
+    bestFor,
     subServices[] {
       title,
       description,
@@ -101,9 +104,12 @@ type SanityService = {
   title?: string;
   slug?: string;
   description?: string;
+  longDescription?: string;
   detail?: string;
   price?: number;
   currency?: string;
+  highlights?: string[];
+  bestFor?: string[];
   subServices?: SanitySubService[];
   whatsappTemplate?: string;
   isActive?: boolean;
@@ -272,12 +278,15 @@ function mapServices(
     .map((service) => ({
       title: service.title || "",
       description: service.description || "",
+      longDescription: service.longDescription,
       price: formatPrice(service.price, service.currency),
       detail:
         service.detail ||
         (service.subServices?.length
           ? `${service.subServices.length} focused options`
           : "Available session"),
+      highlights: service.highlights,
+      bestFor: service.bestFor,
       subServices: mapSubServices(service.subServices, service.currency),
       whatsappTemplate: service.whatsappTemplate,
       whatsappPhoneNumber,

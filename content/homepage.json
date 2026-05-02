@@ -50,8 +50,19 @@
       {
         "title": "Tarot",
         "description": "Intuitive card guidance for emotional clarity, decision-making, and the patterns influencing your current situation.",
+        "longDescription": "Tarot readings help you slow down, understand the energy around a question, and see the choices available with more honesty. Each session is focused on practical clarity rather than fear-based prediction, so you leave with grounded next steps.",
         "price": "₹1,100",
         "detail": "Focused card reading",
+        "highlights": [
+          "Current energy around your question",
+          "Likely blocks, patterns, and choices",
+          "Practical guidance for the next step"
+        ],
+        "bestFor": [
+          "Love and relationship confusion",
+          "Career or decision crossroads",
+          "Emotional clarity before taking action"
+        ],
         "whatsappTemplate": "Hi, I would like to inquire about a Tarot reading.",
         "subServices": [
           {
@@ -74,29 +85,73 @@
       {
         "title": "Vastu",
         "description": "Space and direction guidance for homes or workplaces, focused on energetic balance, flow, and practical remedies.",
+        "longDescription": "Vastu consultation looks at how your space supports health, peace, prosperity, and day-to-day flow. The session focuses on clear observations and practical remedies that can be applied without creating unnecessary stress or major disruption.",
         "price": "₹5,100",
         "detail": "Home or workspace review",
+        "highlights": [
+          "Directional and room placement review",
+          "Energy flow and practical correction areas",
+          "Simple remedies for home or workspace balance"
+        ],
+        "bestFor": [
+          "Home or office energy concerns",
+          "Planning changes in an existing space",
+          "Improving peace, focus, and flow"
+        ],
         "whatsappTemplate": "Hi, I would like to inquire about a Vastu consultation."
       },
       {
         "title": "Numerology",
         "description": "Name, date, and number analysis to understand personal patterns, favorable vibrations, and alignment options.",
+        "longDescription": "Numerology helps decode the patterns connected with your name and date of birth. It can reveal personality tendencies, timing influences, favorable numbers, and alignment options for personal or professional decisions.",
         "price": "₹1,500",
         "detail": "Name and date analysis",
+        "highlights": [
+          "Date of birth and name vibration review",
+          "Personal strengths and recurring patterns",
+          "Favorable numbers and alignment suggestions"
+        ],
+        "bestFor": [
+          "Name or brand alignment",
+          "Understanding personal patterns",
+          "Choosing supportive dates or directions"
+        ],
         "whatsappTemplate": "Hi, I would like to inquire about a Numerology consultation."
       },
       {
         "title": "Astrology",
         "description": "Birth chart and timing guidance for relationships, career, family, health themes, and important life decisions.",
+        "longDescription": "Astrology consultations use birth chart patterns and timing indicators to bring structure to important life questions. The reading connects planetary influences with practical themes around relationships, career, family, health, and personal growth.",
         "price": "₹2,100",
         "detail": "Chart-based consultation",
+        "highlights": [
+          "Birth chart theme interpretation",
+          "Timing guidance for important decisions",
+          "Relationship, career, family, and life-direction insight"
+        ],
+        "bestFor": [
+          "Life direction and timing questions",
+          "Relationship or career decisions",
+          "Understanding repeated life patterns"
+        ],
         "whatsappTemplate": "Hi, I would like to inquire about an Astrology consultation."
       },
       {
         "title": "Reiki Healing",
         "description": "Gentle energy healing support for emotional release, grounding, balance, and spiritual restoration.",
+        "longDescription": "Reiki healing is a gentle energy practice designed to support emotional release, grounding, and inner balance. It is helpful when you feel energetically heavy, stressed, disconnected, or in need of calm spiritual support.",
         "price": "₹1,800",
         "detail": "Energy healing session",
+        "highlights": [
+          "Calming energy support",
+          "Emotional release and grounding",
+          "Restorative spiritual balance"
+        ],
+        "bestFor": [
+          "Stress and emotional heaviness",
+          "Feeling energetically blocked",
+          "Gentle healing and spiritual reset"
+        ],
         "whatsappTemplate": "Hi, I would like to inquire about a Reiki Healing session."
       }
     ]

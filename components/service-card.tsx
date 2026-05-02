@@ -1,10 +1,13 @@
 "use client";
 
+import type { KeyboardEvent } from "react";
 import type { Service } from "@/lib/homepage-data";
 import { createWhatsAppInquiryUrl } from "@/lib/whatsapp";
 import { motion } from "framer-motion";
 
-type ServiceCardProps = Service;
+type ServiceCardProps = Service & {
+  onSelect?: () => void;
+};
 
 export function ServiceCard({
   title,
@@ -15,6 +18,7 @@ export function ServiceCard({
   whatsappTemplate,
   whatsappPhoneNumber,
   whatsappUrl,
+  onSelect,
 }: ServiceCardProps) {
   const inquiryUrl =
     whatsappUrl ||
@@ -24,11 +28,22 @@ export function ServiceCard({
       template: whatsappTemplate,
     });
 
+  function handleKeyDown(event: KeyboardEvent<HTMLElement>) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onSelect?.();
+    }
+  }
+
   return (
     <motion.article
-      className="group flex min-h-72 flex-col rounded-[1.5rem] border border-gold/15 bg-white/85 p-6 shadow-xl shadow-gold/5 transition hover:-translate-y-0.5 hover:border-gold/35 hover:bg-white sm:min-h-80 sm:p-7"
+      className="group flex min-h-72 cursor-pointer flex-col rounded-[1.5rem] border border-gold/15 bg-white/85 p-6 shadow-xl shadow-gold/5 outline-none transition hover:-translate-y-0.5 hover:border-gold/35 hover:bg-white focus-visible:border-gold/50 focus-visible:ring-2 focus-visible:ring-gold/20 sm:min-h-80 sm:p-7"
+      role="button"
+      tabIndex={0}
       whileHover={{ y: -3 }}
       transition={{ duration: 0.22, ease: "easeOut" }}
+      onClick={onSelect}
+      onKeyDown={handleKeyDown}
     >
       <p className="text-xs font-semibold uppercase text-gold">{detail}</p>
       <h3 className="mt-5 text-2xl font-semibold text-starlight">
@@ -62,11 +77,22 @@ export function ServiceCard({
         <span className="text-2xl font-semibold text-gold">
           {price}
         </span>
+        <button
+          type="button"
+          className="inline-flex h-11 items-center justify-center rounded-full border border-gold/20 bg-white/75 px-5 text-sm font-semibold text-starlight transition hover:border-gold/50 hover:text-gold"
+          onClick={(event) => {
+            event.stopPropagation();
+            onSelect?.();
+          }}
+        >
+          View Details
+        </button>
         <a
           href={inquiryUrl}
           target="_blank"
           rel="noreferrer"
           className="inline-flex h-11 items-center justify-center rounded-full border border-gold/35 bg-[#fffaf0] px-5 text-sm font-semibold text-gold transition group-hover:bg-gold-soft group-hover:text-starlight"
+          onClick={(event) => event.stopPropagation()}
         >
           Inquire Now
         </a>

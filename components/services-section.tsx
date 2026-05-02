@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import type { Service } from "@/lib/homepage-data";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
+import { ServiceDetailsModal } from "@/components/service-details-modal";
 
 type ServicesSectionProps = {
   eyebrow: string;
@@ -15,6 +19,8 @@ export function ServicesSection({
   description,
   services,
 }: ServicesSectionProps) {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+
   return (
     <section id="services" className="space-y-12">
       <SectionHeading
@@ -24,9 +30,17 @@ export function ServicesSection({
       />
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {services.map((service) => (
-          <ServiceCard key={service.title} {...service} />
+          <ServiceCard
+            key={service.title}
+            onSelect={() => setSelectedService(service)}
+            {...service}
+          />
         ))}
       </div>
+      <ServiceDetailsModal
+        service={selectedService}
+        onClose={() => setSelectedService(null)}
+      />
     </section>
   );
 }
