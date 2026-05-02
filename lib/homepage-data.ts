@@ -112,9 +112,9 @@ export type HomepageData = {
 };
 
 export const stats: Stat[] = [
-  { label: "Years of Practice", value: "12+" },
-  { label: "Private Clients", value: "4.8k" },
-  { label: "Client Clarity Score", value: "96%" },
+  { label: "Years of Practice", value: "4+" },
+  { label: "Private Clients", value: "200+" },
+  { label: "Client Clarity Score", value: "97%" },
 ];
 
 export const heroSection = {
