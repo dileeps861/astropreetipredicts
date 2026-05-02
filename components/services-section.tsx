@@ -31,8 +31,16 @@ export function ServicesSection({
         description={description}
       />
       {availabilityNote ? (
-        <div className="inline-flex max-w-3xl rounded-2xl border border-gold/20 bg-white/80 px-5 py-4 text-sm font-medium leading-6 text-starlight shadow-sm shadow-gold/5">
-          {availabilityNote}
+        <div className="relative overflow-hidden rounded-[1.5rem] border border-gold/25 bg-[linear-gradient(135deg,rgba(255,250,240,0.98),rgba(248,224,138,0.55)_48%,rgba(240,122,53,0.16))] px-5 py-5 shadow-xl shadow-gold/10 sm:px-7">
+          <div className="absolute right-5 top-4 h-16 w-16 rounded-full bg-gold/15 blur-2xl" />
+          <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center">
+            <span className="inline-flex w-fit rounded-full border border-gold/25 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-gold">
+              Delhi NCR
+            </span>
+            <p className="max-w-3xl text-sm font-semibold leading-6 text-starlight sm:text-base">
+              {availabilityNote}
+            </p>
+          </div>
         </div>
       ) : null}
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">

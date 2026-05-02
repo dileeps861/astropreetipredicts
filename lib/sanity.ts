@@ -257,7 +257,10 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
             marker: featuredService.price.replace(/[^0-9]/g, "") || "1",
             details: [
               { label: "Starting from", value: featuredService.price },
-              { label: "Consulting format", value: "WhatsApp / Call" },
+              {
+                label: "Consulting format",
+                value: "WhatsApp / Call / In-person",
+              },
               {
                 label: "Best for",
                 value:
