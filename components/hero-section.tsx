@@ -105,15 +105,43 @@ function FeaturedReadingPanel({
       </div>
       <div className="grid gap-3 text-sm sm:grid-cols-3">
         {details.map((detail) => (
-          <div
-            key={detail.label}
-            className="rounded-2xl border border-gold/15 bg-[#fffaf0]/90 p-4"
-          >
-            <p className="text-muted-foreground">{detail.label}</p>
-            <p className="mt-1 font-semibold text-starlight">{detail.value}</p>
-          </div>
+          <FeaturedDetailCard key={detail.label} detail={detail} />
         ))}
       </div>
     </div>
+  );
+}
+
+function FeaturedDetailCard({
+  detail,
+}: {
+  detail: FeaturedReading["details"][number];
+}) {
+  const className = detail.href
+    ? "rounded-2xl border border-[#25d366]/25 bg-[linear-gradient(135deg,rgba(237,252,244,0.96),rgba(248,224,138,0.58))] p-4 shadow-sm shadow-[#25d366]/10 transition hover:-translate-y-0.5 hover:border-[#25d366]/45"
+    : "rounded-2xl border border-gold/15 bg-[#fffaf0]/90 p-4";
+  const content = (
+    <>
+      <p className="text-muted-foreground">{detail.label}</p>
+      <p className="mt-1 font-semibold text-starlight">{detail.value}</p>
+    </>
+  );
+
+  if (!detail.href) {
+    return <div className={className}>{content}</div>;
+  }
+
+  return (
+    <a
+      href={detail.href}
+      target="_blank"
+      rel="noreferrer"
+      className={className}
+    >
+      {content}
+      <span className="mt-3 inline-flex text-xs font-semibold uppercase tracking-[0.14em] text-[#1b8c4a]">
+        Inquire on WhatsApp
+      </span>
+    </a>
   );
 }

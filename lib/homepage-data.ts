@@ -63,6 +63,7 @@ export type FeaturedReading = {
   details: Array<{
     label: string;
     value: string;
+    href?: string;
   }>;
 };
 

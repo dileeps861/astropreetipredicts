@@ -260,6 +260,7 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
               {
                 label: "Consulting format",
                 value: "WhatsApp / Call / In-person",
+                href: featuredService.whatsappUrl,
               },
               {
                 label: "Best for",

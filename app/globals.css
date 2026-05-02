@@ -53,8 +53,10 @@ body {
     radial-gradient(circle at 30% 8%, rgba(159, 118, 25, 0.1) 0 1.5px, transparent 2px),
     radial-gradient(circle at 72% 15%, rgba(159, 118, 25, 0.12) 0 1.5px, transparent 2px),
     radial-gradient(circle at 91% 36%, rgba(159, 118, 25, 0.1) 0 1.5px, transparent 2px),
-    radial-gradient(circle at 18% 62%, rgba(82, 39, 122, 0.055), transparent 26rem),
-    linear-gradient(120deg, #fffaf0 0%, #fffdf7 45%, #fbf1dc 100%);
+    linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, transparent 26%),
+    linear-gradient(225deg, rgba(223, 93, 143, 0.08) 0%, transparent 30%),
+    linear-gradient(315deg, rgba(255, 45, 45, 0.055) 0%, transparent 24%),
+    linear-gradient(120deg, #fffaf0 0%, #fff8ed 28%, #f8fff5 52%, #fff5f9 76%, #fbf1dc 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
