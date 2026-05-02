@@ -8,7 +8,7 @@ export function SiteHeader() {
       <PageContainer className="flex h-20 items-center justify-between">
         <a href="#" className="flex items-center gap-3">
           <Image
-            src="/page_logo.png"
+            src="/assets/images/page_logo.png"
             alt="Astropreeti Predicts logo"
             width={44}
             height={44}

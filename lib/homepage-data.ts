@@ -55,6 +55,8 @@ export type FeaturedReading = {
   eyebrow: string;
   title: string;
   description: string;
+  imageUrl?: string;
+  imageAlt?: string;
   marker: string;
   details: Array<{
     label: string;

@@ -28,7 +28,7 @@ export function ServicesSection({
         title={title}
         description={description}
       />
-      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {services.map((service) => (
           <ServiceCard
             key={service.title}

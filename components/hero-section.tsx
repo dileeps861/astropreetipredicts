@@ -77,6 +77,8 @@ function FeaturedReadingPanel({
   eyebrow,
   title,
   description,
+  imageUrl,
+  imageAlt,
   details,
 }: FeaturedReading) {
   return (
@@ -93,11 +95,11 @@ function FeaturedReadingPanel({
       </div>
       <div className="relative my-8 grid flex-1 place-items-center">
         <Image
-          src="/page_logo.png"
-          alt="Astropreeti Predicts logo"
+          src={imageUrl || "/assets/images/page_logo.png"}
+          alt={imageAlt || title}
           width={420}
           height={420}
-          className="w-full max-w-sm rounded-[1.75rem] object-cover"
+          className="w-full max-w-xs rounded-[1.75rem] object-cover sm:max-w-sm"
           priority
         />
       </div>

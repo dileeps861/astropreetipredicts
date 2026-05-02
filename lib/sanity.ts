@@ -245,6 +245,8 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
             title: featuredService.title,
             description:
               featuredService.longDescription || featuredService.description,
+            imageUrl: defaultHomepageData.heroSection.featuredReading.imageUrl,
+            imageAlt: defaultHomepageData.heroSection.featuredReading.imageAlt,
             marker: featuredService.price.replace(/[^0-9]/g, "") || "1",
             details: [
               { label: "Starting from", value: featuredService.price },

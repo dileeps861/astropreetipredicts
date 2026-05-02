@@ -7,6 +7,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Astropreeti Predicts",
   description: "Vedic wisdom, clarity, and guidance.",
+  icons: {
+    icon: "/assets/images/icon.png",
+    apple: "/assets/images/apple-icon.png",
+  },
 };
 
 export default function RootLayout({

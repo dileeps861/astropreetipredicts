@@ -43,7 +43,7 @@ export function AboutSection({
         ) : (
           <div className="flex aspect-[4/5] flex-col justify-between rounded-[1.35rem] border border-gold/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(250,239,211,0.74))] p-6">
             <Image
-              src="/page_logo.png"
+              src="/assets/images/page_logo.png"
               alt="Astropreeti Predicts logo"
               width={420}
               height={420}
