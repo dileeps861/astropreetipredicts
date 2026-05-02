@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { createClient, defineQuery } from "next-sanity";
 import {
   defaultHomepageData,
+  type AboutDetail,
   type HomepageData,
   type Review,
   type Service,
@@ -76,6 +77,11 @@ const homepageQuery = defineQuery(`{
   "about": *[_type == "about"][0] {
     name,
     bio,
+    location,
+    details[] {
+      label,
+      value
+    },
     experienceYears,
     clientsServed,
     accuracy,
@@ -143,6 +149,8 @@ type SanityVideo = {
 type SanityAbout = {
   name?: string;
   bio?: string;
+  location?: string;
+  details?: AboutDetail[];
   experienceYears?: number;
   clientsServed?: number;
   accuracy?: number;
@@ -373,7 +381,7 @@ function mapAboutSection(about?: SanityAbout | null) {
     },
     {
       label: "Private Clients",
-      value: formatCompactNumber(about.clientsServed),
+      value: formatClientsServed(about.clientsServed),
     },
     {
       label: "Client Clarity Score",
@@ -389,8 +397,23 @@ function mapAboutSection(about?: SanityAbout | null) {
     profileInitials: getInitials(name),
     profileName: name,
     profileImageUrl: about.profileImageUrl,
+    location: about.location || defaultHomepageData.aboutSection.location,
+    details: sanitizeAboutDetails(about.details),
     stats,
   };
+}
+
+function sanitizeAboutDetails(details: AboutDetail[] = []) {
+  const mappedDetails = details
+    .filter((detail) => detail.label && detail.value)
+    .map((detail) => ({
+      label: detail.label,
+      value: detail.value,
+    }));
+
+  return mappedDetails.length
+    ? mappedDetails
+    : defaultHomepageData.aboutSection.details;
 }
 
 function formatPrice(price?: number, currency = "INR") {
@@ -442,6 +465,14 @@ function formatCompactNumber(value?: number) {
   }
 
   return `${value}`;
+}
+
+function formatClientsServed(value?: number) {
+  if (typeof value !== "number") {
+    return "0+";
+  }
+
+  return `${formatCompactNumber(value)}+`;
 }
 
 function getInitials(name: string) {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Stat } from "@/lib/homepage-data";
+import type { AboutDetail, Stat } from "@/lib/homepage-data";
 import { SectionHeading } from "@/components/section-heading";
 
 type AboutSectionProps = {
@@ -10,6 +10,8 @@ type AboutSectionProps = {
   profileInitials: string;
   profileName?: string;
   profileImageUrl?: string;
+  location?: string;
+  details?: AboutDetail[];
   stats: Stat[];
 };
 
@@ -21,6 +23,8 @@ export function AboutSection({
   profileInitials,
   profileName,
   profileImageUrl,
+  location,
+  details = [],
   stats,
 }: AboutSectionProps) {
   return (
@@ -57,11 +61,33 @@ export function AboutSection({
         )}
       </div>
       <div className="lg:pl-10">
+        {location ? (
+          <div className="mb-5 inline-flex items-center rounded-full border border-gold/20 bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-starlight/70 shadow-sm shadow-gold/5">
+            Based in {location}
+          </div>
+        ) : null}
         <SectionHeading
           eyebrow={eyebrow}
           title={title}
           description={description}
         />
+        {details.length ? (
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {details.map((detail) => (
+              <div
+                key={`${detail.label}-${detail.value}`}
+                className="rounded-2xl border border-gold/15 bg-white/80 p-4 shadow-sm shadow-gold/5"
+              >
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold">
+                  {detail.label}
+                </p>
+                <p className="mt-2 text-sm font-medium leading-6 text-starlight">
+                  {detail.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        ) : null}
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {stats.map((stat) => (
             <div

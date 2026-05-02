@@ -69,6 +69,11 @@ export type HeroSectionData = {
   featuredReading: FeaturedReading;
 };
 
+export type AboutDetail = {
+  label: string;
+  value: string;
+};
+
 export type ServicesSectionData = {
   eyebrow: string;
   title: string;
@@ -84,6 +89,8 @@ export type AboutSectionData = {
   profileInitials: string;
   profileName?: string;
   profileImageUrl?: string;
+  location?: string;
+  details?: AboutDetail[];
   stats: Stat[];
 };
 

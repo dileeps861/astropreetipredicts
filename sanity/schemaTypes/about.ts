@@ -19,6 +19,44 @@ export const aboutType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "location",
+      title: "Location",
+      type: "string",
+      description: "Shown as the based-in location on the homepage.",
+    }),
+    defineField({
+      name: "details",
+      title: "About Details",
+      type: "array",
+      description: "Short customer-facing detail cards shown below the bio.",
+      of: [
+        {
+          title: "Detail",
+          type: "object",
+          fields: [
+            defineField({
+              name: "label",
+              title: "Label",
+              type: "string",
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "value",
+              title: "Value",
+              type: "string",
+              validation: (rule) => rule.required(),
+            }),
+          ],
+          preview: {
+            select: {
+              title: "label",
+              subtitle: "value",
+            },
+          },
+        },
+      ],
+    }),
+    defineField({
       name: "experienceYears",
       title: "Experience Years",
       type: "number",

@@ -157,15 +157,48 @@
           "Gentle healing and spiritual reset"
         ],
         "whatsappTemplate": "Hi, I would like to inquire about a Reiki Healing session."
+      },
+      {
+        "title": "In-Person Consultation",
+        "description": "Face-to-face spiritual guidance sessions in Delhi NCR for astrology, tarot, numerology, Reiki healing, or combined consultation needs.",
+        "longDescription": "In-person consultations are available for clients in Delhi NCR who prefer a more personal, face-to-face session. The session can be shaped around astrology, tarot, numerology, Reiki healing, or a combined consultation based on what you need clarity on.",
+        "price": "₹3,100",
+        "detail": "Delhi NCR only",
+        "highlights": [
+          "Personal consultation in Delhi NCR",
+          "Flexible format based on your question",
+          "Calm, private guidance with practical next steps"
+        ],
+        "bestFor": [
+          "Clients based in Delhi NCR",
+          "Detailed family, relationship, or career guidance",
+          "Combined astrology, tarot, numerology, or healing sessions"
+        ],
+        "whatsappTemplate": "Hi, I would like to inquire about an in-person consultation in Delhi NCR."
       }
     ]
   },
   "aboutSection": {
     "eyebrow": "About",
-    "title": "Intuitive astrology with a refined client experience.",
-    "description": "Sessions are calm, direct, and carefully prepared. Every reading turns chart patterns into plain-language insight, so clients leave with context, timing, and a stronger sense of direction.",
-    "profileLabel": "Profile placeholder",
-    "profileInitials": "AP",
+    "title": "Meet Preeti Singh",
+    "description": "I'm Preeti Singh, based in Delhi NCR. Through Tarot, Astrology, Numerology, Vastu, and Reiki Healing, I help clients understand relationships, career direction, home energy, and emotional patterns with calm, practical guidance. Sessions are personal, clear, and focused on helping you choose the next step with confidence.",
+    "profileLabel": "Preeti Singh",
+    "profileInitials": "PS",
+    "location": "Delhi NCR",
+    "details": [
+      {
+        "label": "Consultations",
+        "value": "Online and in-person"
+      },
+      {
+        "label": "Services",
+        "value": "Tarot, Astrology, Vastu, Numerology, Reiki"
+      },
+      {
+        "label": "Approach",
+        "value": "Clear guidance with grounded next steps"
+      }
+    ],
     "stats": [
       {
         "label": "Years of Practice",
