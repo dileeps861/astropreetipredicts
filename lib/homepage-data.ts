@@ -83,6 +83,7 @@ export type ServicesSectionData = {
   eyebrow: string;
   title: string;
   description: string;
+  availabilityNote?: string;
   services: Service[];
 };
 

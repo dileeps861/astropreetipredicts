@@ -174,6 +174,7 @@ type SanitySectionCopy = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  availabilityNote?: string;
 };
 
 type SanityHeroCopy = SanitySectionCopy & {
@@ -263,7 +264,7 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
     },
     servicesSection: {
       ...defaultHomepageData.servicesSection,
-      ...pickSectionCopy(homepage?.services),
+      ...pickServicesSectionCopy(homepage?.services),
       services: services.length
         ? services
         : defaultHomepageData.servicesSection.services,
@@ -451,6 +452,17 @@ function pickSectionCopy(section?: SanitySectionCopy) {
       description: section?.description,
     }).filter(([, value]) => Boolean(value)),
   );
+}
+
+function pickServicesSectionCopy(section?: SanitySectionCopy) {
+  return {
+    ...pickSectionCopy(section),
+    ...Object.fromEntries(
+      Object.entries({
+        availabilityNote: section?.availabilityNote,
+      }).filter(([, value]) => Boolean(value)),
+    ),
+  };
 }
 
 function pickCta(cta?: SanityCta) {

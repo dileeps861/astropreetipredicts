@@ -80,6 +80,14 @@ export const homepageType = defineType({
           type: "text",
           rows: 3,
         }),
+        defineField({
+          name: "availabilityNote",
+          title: "Availability Note",
+          type: "text",
+          rows: 2,
+          description:
+            "Optional note shown below the services heading, such as in-person availability.",
+        }),
       ],
     }),
     defineField({
