@@ -300,7 +300,10 @@ export const contactSection = {
     "Reach out through WhatsApp, Instagram, or email when you are ready to explore a session.",
   links: [
     { label: "WhatsApp", href: "https://wa.me/10000000000" },
-    { label: "Instagram", href: "https://instagram.com/astrology" },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/astropreetipredicts?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    },
     { label: "Email", href: "mailto:hello@example.com" },
   ] satisfies CtaLink[],
 };
