@@ -59,6 +59,10 @@ function getYouTubeVideoId(url?: string) {
       return parsedUrl.pathname.split("/embed/")[1]?.split("/")[0];
     }
 
+    if (parsedUrl.pathname.includes("/shorts/")) {
+      return parsedUrl.pathname.split("/shorts/")[1]?.split("/")[0];
+    }
+
     return parsedUrl.searchParams.get("v") || undefined;
   } catch {
     return undefined;

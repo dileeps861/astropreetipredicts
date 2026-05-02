@@ -43,10 +43,30 @@ export const serviceType = defineType({
       description: "Short label shown above the service title.",
     }),
     defineField({
+      name: "badge",
+      title: "Badge",
+      type: "string",
+      description: "Optional small badge shown on the service card.",
+    }),
+    defineField({
+      name: "actionLabel",
+      title: "Action Label",
+      type: "string",
+      description:
+        "Optional button label for the inquiry action, such as Order Now or Check Now.",
+    }),
+    defineField({
       name: "price",
       title: "Price",
       type: "number",
       validation: (rule) => rule.required().min(0),
+    }),
+    defineField({
+      name: "priceLabel",
+      title: "Price Label Override",
+      type: "string",
+      description:
+        "Optional display text such as Free or Contact. Leave empty to format the numeric price with the selected currency.",
     }),
     defineField({
       name: "currency",
@@ -162,19 +182,20 @@ export const serviceType = defineType({
     select: {
       title: "title",
       subtitle: "price",
+      priceLabel: "priceLabel",
       currency: "currency",
     },
-    prepare({ title, subtitle, currency }) {
+    prepare({ title, subtitle, priceLabel, currency }) {
       return {
         title,
-        subtitle:
-          typeof subtitle === "number"
+        subtitle: priceLabel ||
+          (typeof subtitle === "number"
             ? new Intl.NumberFormat("en-IN", {
                 style: "currency",
                 currency: currency || "INR",
                 maximumFractionDigits: 0,
               }).format(subtitle)
-            : undefined,
+            : undefined),
       };
     },
   },

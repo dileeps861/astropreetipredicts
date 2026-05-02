@@ -10,7 +10,10 @@ export type Service = {
   description: string;
   longDescription?: string;
   price: string;
+  priceLabel?: string;
   detail: string;
+  badge?: string;
+  actionLabel?: string;
   highlights?: string[];
   bestFor?: string[];
   subServices?: ServiceSubService[];

@@ -32,6 +32,13 @@ export const videoType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "duration",
+      title: "Duration / Label",
+      type: "string",
+      description:
+        "Optional label shown on the video card, such as Shorts, 01:20, or Instagram.",
+    }),
+    defineField({
       name: "youtubeUrl",
       title: "YouTube URL",
       type: "url",

@@ -25,6 +25,9 @@ export function VideosSection({
     () => getVideoEmbed(selectedVideo || undefined),
     [selectedVideo],
   );
+  const isVerticalVideo =
+    embed?.provider === "instagram" ||
+    selectedVideo?.youtubeUrl?.includes("/shorts/");
 
   return (
     <section id="videos" className="space-y-12">
@@ -33,7 +36,7 @@ export function VideosSection({
         title={title}
         description={description}
       />
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {videos.map((video, index) => (
           <VideoCard
             key={video.title}
@@ -53,7 +56,7 @@ export function VideosSection({
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className={
-              embed.provider === "instagram"
+              isVerticalVideo
                 ? "mx-auto aspect-[9/16] max-h-[78vh] w-full max-w-sm"
                 : "aspect-video w-full"
             }

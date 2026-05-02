@@ -141,6 +141,86 @@
         "whatsappTemplate": "Hi, I would like to inquire about an Astrology consultation."
       },
       {
+        "title": "Premium Personalized Kundli",
+        "description": "Detailed life guidance through a customized birth chart prepared around your exact birth details.",
+        "longDescription": "A personalized Kundli reading gives a detailed view of your birth chart, strengths, life patterns, relationship themes, career direction, and important timing influences. It is best for clients who want a structured, chart-based consultation with practical guidance.",
+        "price": "Contact",
+        "detail": "Customized birth chart",
+        "badge": "India's No. 1",
+        "actionLabel": "Order Now",
+        "highlights": [
+          "Detailed birth chart interpretation",
+          "Career, relationship, family, and life-pattern guidance",
+          "Clear remedies and practical next steps"
+        ],
+        "bestFor": [
+          "Understanding your complete Kundli",
+          "Life direction and timing questions",
+          "Personalized spiritual guidance"
+        ],
+        "whatsappTemplate": "Hi, I would like to order a Premium Personalized Kundli reading."
+      },
+      {
+        "title": "Free Kundli Calculator",
+        "description": "Generate your accurate birth chart instantly with basic Kundli details.",
+        "longDescription": "The free Kundli calculator is for clients who want to start with their basic birth chart details before booking a deeper consultation. Share your birth details to receive guidance on the next best reading for your question.",
+        "price": "Free",
+        "detail": "Instant birth chart",
+        "badge": "FREE",
+        "actionLabel": "Check Now",
+        "highlights": [
+          "Basic birth chart starting point",
+          "Helpful before a detailed astrology session",
+          "Quick guidance on the right consultation"
+        ],
+        "bestFor": [
+          "First-time Kundli users",
+          "Clients preparing for astrology consultation",
+          "Basic birth chart discovery"
+        ],
+        "whatsappTemplate": "Hi, I would like to check my free Kundli. Please guide me with the details needed."
+      },
+      {
+        "title": "Couple Kundli Report",
+        "description": "Understand compatibility and long-term relationship potential through both birth charts.",
+        "longDescription": "A Couple Kundli Report reviews compatibility, emotional understanding, long-term relationship potential, family harmony, and key areas that may need attention. It is useful for marriage discussions, committed relationships, or deeper compatibility clarity.",
+        "price": "Contact",
+        "detail": "Compatibility report",
+        "badge": "7L+ Sold",
+        "actionLabel": "Order Now",
+        "highlights": [
+          "Compatibility and relationship potential",
+          "Strengths, concerns, and communication patterns",
+          "Marriage and long-term harmony guidance"
+        ],
+        "bestFor": [
+          "Marriage compatibility",
+          "Committed relationships",
+          "Families evaluating long-term match potential"
+        ],
+        "whatsappTemplate": "Hi, I would like to order a Couple Kundli Report."
+      },
+      {
+        "title": "Kundli Matching Calculator",
+        "description": "Check marriage compatibility with Guna Milan and chart-based relationship indicators.",
+        "longDescription": "Kundli matching helps evaluate marriage compatibility through Guna Milan and related chart indicators. It provides a starting point for understanding harmony, emotional fit, and possible areas that need remedies or deeper guidance.",
+        "price": "Free",
+        "detail": "Marriage compatibility",
+        "badge": "FREE",
+        "actionLabel": "Check Now",
+        "highlights": [
+          "Basic Guna Milan compatibility check",
+          "Marriage-focused relationship indicators",
+          "Guidance on whether a deeper report is needed"
+        ],
+        "bestFor": [
+          "Marriage compatibility checks",
+          "Families comparing two birth charts",
+          "Couples looking for relationship clarity"
+        ],
+        "whatsappTemplate": "Hi, I would like to check Kundli matching for marriage compatibility."
+      },
+      {
         "title": "Reiki Healing",
         "description": "Gentle energy healing support for emotional release, grounding, balance, and spiritual restoration.",
         "longDescription": "Reiki healing is a gentle energy practice designed to support emotional release, grounding, and inner balance. It is helpful when you feel energetically heavy, stressed, disconnected, or in need of calm spiritual support.",
@@ -261,24 +341,36 @@
         "instagramUrl": "https://www.instagram.com/reel/DNJAx8aTctb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
       },
       {
-        "title": "How Compatibility Readings Work",
-        "description": "An introduction to relationship guidance and how chart patterns can reveal emotional compatibility.",
-        "duration": "06:45",
+        "title": "Preeti Predicts YouTube Short",
+        "description": "A short video guidance preview from the Preeti Predicts YouTube channel.",
+        "duration": "Shorts",
         "provider": "youtube",
-        "thumbnailUrl": "/page_logo.png",
-        "youtubeUrl": "https://www.youtube.com/watch?v=ysz5S6PUM-U"
+        "thumbnailUrl": "https://img.youtube.com/vi/mn69iG8YSpc/hqdefault.jpg",
+        "youtubeUrl": "https://youtube.com/shorts/mn69iG8YSpc?si=8s-QRUJSqB5U-Yy5"
+      },
+      {
+        "title": "Astrology Guidance YouTube Short",
+        "description": "A quick Preeti Predicts video with spiritual insight and practical reflection.",
+        "duration": "Shorts",
+        "provider": "youtube",
+        "thumbnailUrl": "https://img.youtube.com/vi/oFQ_vsXWN9s/hqdefault.jpg",
+        "youtubeUrl": "https://youtube.com/shorts/oFQ_vsXWN9s?si=Z-SLZOCd4AB4KRgA"
       }
     ]
   },
   "contactSection": {
     "eyebrow": "Contact",
     "title": "Connect for your next reading.",
-    "description": "Reach out through WhatsApp, Instagram, or email when you are ready to explore a session.",
-    "whatsappPhoneNumber": "10000000000",
+    "description": "Call or WhatsApp on +91 98184 41342, or reach out through Instagram, YouTube, or email when you are ready to explore a session.",
+    "whatsappPhoneNumber": "919818441342",
     "links": [
       {
+        "label": "Call",
+        "href": "tel:+919818441342"
+      },
+      {
         "label": "WhatsApp",
-        "href": "https://wa.me/10000000000"
+        "href": "https://wa.me/919818441342"
       },
       {
         "label": "Instagram",
@@ -286,7 +378,11 @@
       },
       {
         "label": "Email",
-        "href": "mailto:hello@example.com"
+        "href": "mailto:preetipredicts@gmail.com"
+      },
+      {
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@PreetiPredicts"
       }
     ]
   }

@@ -25,7 +25,7 @@ export function ContactSection({
           title={title}
           description={description}
         />
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {links.map((link) => (
             <ContactLink key={link.label} {...link} />
           ))}
@@ -36,9 +36,13 @@ export function ContactSection({
 }
 
 function ContactLink({ href, label }: CtaLink) {
+  const isExternalLink = href.startsWith("http");
+
   return (
     <a
       href={href}
+      target={isExternalLink ? "_blank" : undefined}
+      rel={isExternalLink ? "noreferrer" : undefined}
       className="rounded-full border border-gold/20 bg-white/85 px-5 py-4 text-center text-sm font-semibold text-starlight shadow-lg shadow-gold/5 transition hover:border-gold/50 hover:text-gold"
     >
       {label}

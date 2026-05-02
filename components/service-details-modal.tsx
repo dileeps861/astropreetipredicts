@@ -70,7 +70,7 @@ export function ServiceDetailsModal({
                     rel="noreferrer"
                     className="inline-flex h-12 items-center justify-center rounded-full bg-gold-soft px-6 text-sm font-semibold text-starlight shadow-lg shadow-gold/15 transition hover:-translate-y-0.5"
                   >
-                    Inquire Now
+                    {service.actionLabel || "Inquire Now"}
                   </a>
                   <button
                     type="button"

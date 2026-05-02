@@ -1,7 +1,7 @@
 const defaultPhoneNumber =
   process.env.NEXT_PUBLIC_WHATSAPP_PHONE_NUMBER ||
   process.env.WHATSAPP_PHONE_NUMBER ||
-  "10000000000";
+  "919818441342";
 
 export function createWhatsAppInquiryUrl({
   phoneNumber = defaultPhoneNumber,

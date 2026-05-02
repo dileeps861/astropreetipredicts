@@ -45,7 +45,10 @@ const homepageQuery = defineQuery(`{
     description,
     longDescription,
     detail,
+    badge,
+    actionLabel,
     price,
+    priceLabel,
     currency,
     highlights,
     bestFor,
@@ -68,6 +71,7 @@ const homepageQuery = defineQuery(`{
   "videos": *[_type == "video"] | order(displayOrder asc, _createdAt desc)[0...6] {
     title,
     description,
+    duration,
     provider,
     youtubeUrl,
     instagramUrl,
@@ -112,7 +116,10 @@ type SanityService = {
   description?: string;
   longDescription?: string;
   detail?: string;
+  badge?: string;
+  actionLabel?: string;
   price?: number;
+  priceLabel?: string;
   currency?: string;
   highlights?: string[];
   bestFor?: string[];
@@ -139,6 +146,7 @@ type SanityReview = {
 type SanityVideo = {
   title?: string;
   description?: string;
+  duration?: string;
   provider?: "youtube" | "instagram";
   youtubeUrl?: string;
   instagramUrl?: string;
@@ -210,7 +218,8 @@ function mapHomepageData(data: HomepageQueryResult): HomepageData {
   const homepage = data.homepage;
   const services = mapServices(
     data.services,
-    homepage?.contact?.whatsappPhoneNumber,
+    homepage?.contact?.whatsappPhoneNumber ||
+      defaultHomepageData.contactSection.whatsappPhoneNumber,
   );
   const reviews = mapReviews(data.reviews);
   const videos = mapVideos(data.videos);
@@ -294,7 +303,10 @@ function mapServices(
       title: service.title || "",
       description: service.description || "",
       longDescription: service.longDescription,
-      price: formatPrice(service.price, service.currency),
+      badge: service.badge,
+      actionLabel: service.actionLabel,
+      price: service.priceLabel || formatPrice(service.price, service.currency),
+      priceLabel: service.priceLabel,
       detail:
         service.detail ||
         (service.subServices?.length
@@ -359,6 +371,7 @@ function mapVideos(videos: SanityVideo[] = []): Video[] {
     .map((video) => ({
       title: video.title || "",
       description: video.description,
+      duration: video.duration,
       provider:
         video.provider ||
         (video.instagramUrl ? "instagram" : video.youtubeUrl ? "youtube" : undefined),
