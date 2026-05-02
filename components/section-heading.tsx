@@ -14,7 +14,7 @@ export function SectionHeading({
       <p className="inline-flex rounded-full border border-gold/20 bg-white/65 px-4 py-2 text-xs font-semibold uppercase text-gold shadow-sm shadow-gold/5">
         {eyebrow}
       </p>
-      <h2 className="mt-5 max-w-2xl text-3xl font-semibold text-starlight sm:text-5xl">
+      <h2 className="mt-5 max-w-2xl bg-[linear-gradient(135deg,#2b241b_0%,#7a481c_46%,#b18428_100%)] bg-clip-text text-3xl font-semibold text-transparent sm:text-5xl">
         {title}
       </h2>
       <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">

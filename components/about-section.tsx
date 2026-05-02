@@ -73,18 +73,12 @@ export function AboutSection({
         />
         {details.length ? (
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            {details.map((detail) => (
-              <div
+            {details.map((detail, index) => (
+              <AboutDetailCard
+                detail={detail}
+                index={index}
                 key={`${detail.label}-${detail.value}`}
-                className="rounded-2xl border border-gold/15 bg-white/80 p-4 shadow-sm shadow-gold/5"
-              >
-                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold">
-                  {detail.label}
-                </p>
-                <p className="mt-2 text-sm font-medium leading-6 text-starlight">
-                  {detail.value}
-                </p>
-              </div>
+              />
             ))}
           </div>
         ) : null}
@@ -105,5 +99,53 @@ export function AboutSection({
         </div>
       </div>
     </section>
+  );
+}
+
+function AboutDetailCard({
+  detail,
+  index,
+}: {
+  detail: AboutDetail;
+  index: number;
+}) {
+  const styles = [
+    {
+      className:
+        "border-[#25d366]/20 bg-[linear-gradient(135deg,rgba(237,252,244,0.98),rgba(248,224,138,0.52))]",
+      icon: "C",
+    },
+    {
+      className:
+        "border-[#df5d8f]/20 bg-[linear-gradient(135deg,rgba(255,245,250,0.98),rgba(255,218,188,0.64),rgba(226,219,255,0.58))]",
+      icon: "S",
+    },
+    {
+      className:
+        "border-gold/25 bg-[linear-gradient(135deg,rgba(255,250,240,0.98),rgba(248,224,138,0.66))]",
+      icon: "A",
+    },
+  ];
+  const style = styles[index % styles.length];
+
+  return (
+    <div
+      className={`relative overflow-hidden rounded-2xl border p-5 shadow-lg shadow-gold/5 ${style.className}`}
+    >
+      <div className="absolute right-3 top-3 h-16 w-16 rounded-full bg-white/45 blur-2xl" />
+      <div className="relative flex items-start gap-4">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/80 text-sm font-semibold text-gold shadow-sm shadow-gold/10">
+          {style.icon}
+        </span>
+        <div>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-gold">
+            {detail.label}
+          </p>
+          <p className="mt-2 text-sm font-semibold leading-6 text-starlight">
+            {detail.value}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
