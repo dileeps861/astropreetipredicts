@@ -43,6 +43,28 @@ export const serviceType = defineType({
       description: "Short label shown above the service title.",
     }),
     defineField({
+      name: "iconImage",
+      title: "Icon Image",
+      type: "image",
+      description: "Preferred icon shown on the service card and detail popup.",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: "iconUrl",
+      title: "Icon URL",
+      type: "string",
+      description:
+        "Optional local or external icon path if an icon image is not uploaded.",
+    }),
+    defineField({
+      name: "iconAlt",
+      title: "Icon Alt Text",
+      type: "string",
+      description: "Accessible label for the service icon.",
+    }),
+    defineField({
       name: "badge",
       title: "Badge",
       type: "string",
@@ -184,10 +206,12 @@ export const serviceType = defineType({
       subtitle: "price",
       priceLabel: "priceLabel",
       currency: "currency",
+      media: "iconImage",
     },
-    prepare({ title, subtitle, priceLabel, currency }) {
+    prepare({ title, subtitle, priceLabel, currency, media }) {
       return {
         title,
+        media,
         subtitle: priceLabel ||
           (typeof subtitle === "number"
             ? new Intl.NumberFormat("en-IN", {

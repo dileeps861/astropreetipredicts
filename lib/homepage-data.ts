@@ -12,6 +12,8 @@ export type Service = {
   price: string;
   priceLabel?: string;
   detail: string;
+  iconUrl?: string;
+  iconAlt?: string;
   badge?: string;
   actionLabel?: string;
   highlights?: string[];

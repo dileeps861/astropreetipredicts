@@ -45,6 +45,9 @@ const homepageQuery = defineQuery(`{
     description,
     longDescription,
     detail,
+    iconUrl,
+    iconAlt,
+    "iconImageUrl": iconImage.asset->url,
     badge,
     actionLabel,
     price,
@@ -116,6 +119,9 @@ type SanityService = {
   description?: string;
   longDescription?: string;
   detail?: string;
+  iconUrl?: string;
+  iconAlt?: string;
+  iconImageUrl?: string;
   badge?: string;
   actionLabel?: string;
   price?: number;
@@ -306,6 +312,8 @@ function mapServices(
       title: service.title || "",
       description: service.description || "",
       longDescription: service.longDescription,
+      iconUrl: service.iconImageUrl || service.iconUrl,
+      iconAlt: service.iconAlt,
       badge: service.badge,
       actionLabel: service.actionLabel,
       price: service.priceLabel || formatPrice(service.price, service.currency),

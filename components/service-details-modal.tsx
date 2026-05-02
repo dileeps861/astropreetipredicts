@@ -46,6 +46,16 @@ export function ServiceDetailsModal({
           >
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(248,224,138,0.42))] p-7 sm:p-9">
+                {service.iconUrl ? (
+                  <div className="mb-6 grid h-16 w-16 place-items-center rounded-2xl border border-gold/20 bg-white/75 shadow-sm shadow-gold/10">
+                    <span
+                      role="img"
+                      aria-label={service.iconAlt || `${service.title} icon`}
+                      className="h-12 w-12 bg-contain bg-center bg-no-repeat"
+                      style={{ backgroundImage: `url(${service.iconUrl})` }}
+                    />
+                  </div>
+                ) : null}
                 <p className="text-xs font-semibold uppercase text-gold">
                   {service.detail}
                 </p>

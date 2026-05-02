@@ -60,6 +60,8 @@
         "longDescription": "Tarot readings help you slow down, understand the energy around a question, and see the choices available with more honesty. Each session is focused on practical clarity rather than fear-based prediction, so you leave with grounded next steps.",
         "price": "₹1,100",
         "detail": "Focused card reading",
+        "iconUrl": "/assets/images/services/tarot.svg",
+        "iconAlt": "Tarot reading icon",
         "highlights": [
           "Current energy around your question",
           "Likely blocks, patterns, and choices",
@@ -95,6 +97,8 @@
         "longDescription": "Vastu consultation looks at how your space supports health, peace, prosperity, and day-to-day flow. The session focuses on clear observations and practical remedies that can be applied without creating unnecessary stress or major disruption.",
         "price": "₹5,100",
         "detail": "Home or workspace review",
+        "iconUrl": "/assets/images/services/vastu.svg",
+        "iconAlt": "Vastu consultation icon",
         "highlights": [
           "Directional and room placement review",
           "Energy flow and practical correction areas",
@@ -113,6 +117,8 @@
         "longDescription": "Numerology helps decode the patterns connected with your name and date of birth. It can reveal personality tendencies, timing influences, favorable numbers, and alignment options for personal or professional decisions.",
         "price": "₹1,500",
         "detail": "Name and date analysis",
+        "iconUrl": "/assets/images/services/numerology.svg",
+        "iconAlt": "Numerology icon",
         "highlights": [
           "Date of birth and name vibration review",
           "Personal strengths and recurring patterns",
@@ -131,6 +137,8 @@
         "longDescription": "Astrology consultations use birth chart patterns and timing indicators to bring structure to important life questions. The reading connects planetary influences with practical themes around relationships, career, family, health, and personal growth.",
         "price": "₹2,100",
         "detail": "Chart-based consultation",
+        "iconUrl": "/assets/images/services/astrology.svg",
+        "iconAlt": "Astrology icon",
         "highlights": [
           "Birth chart theme interpretation",
           "Timing guidance for important decisions",
@@ -149,6 +157,8 @@
         "longDescription": "A personalized Kundli reading gives a detailed view of your birth chart, strengths, life patterns, relationship themes, career direction, and important timing influences. It is best for clients who want a structured, chart-based consultation with practical guidance.",
         "price": "Contact",
         "detail": "Customized birth chart",
+        "iconUrl": "/assets/images/services/kundli.svg",
+        "iconAlt": "Personalized Kundli icon",
         "badge": "India's No. 1",
         "actionLabel": "Order Now",
         "highlights": [
@@ -169,6 +179,8 @@
         "longDescription": "The free Kundli calculator is for clients who want to start with their basic birth chart details before booking a deeper consultation. Share your birth details to receive guidance on the next best reading for your question.",
         "price": "Free",
         "detail": "Instant birth chart",
+        "iconUrl": "/assets/images/services/kundli-calculator.svg",
+        "iconAlt": "Kundli calculator icon",
         "badge": "FREE",
         "actionLabel": "Check Now",
         "highlights": [
@@ -189,6 +201,8 @@
         "longDescription": "A Couple Kundli Report reviews compatibility, emotional understanding, long-term relationship potential, family harmony, and key areas that may need attention. It is useful for marriage discussions, committed relationships, or deeper compatibility clarity.",
         "price": "Contact",
         "detail": "Compatibility report",
+        "iconUrl": "/assets/images/services/couple-kundli.svg",
+        "iconAlt": "Couple Kundli report icon",
         "badge": "7L+ Sold",
         "actionLabel": "Order Now",
         "highlights": [
@@ -209,6 +223,8 @@
         "longDescription": "Kundli matching helps evaluate marriage compatibility through Guna Milan and related chart indicators. It provides a starting point for understanding harmony, emotional fit, and possible areas that need remedies or deeper guidance.",
         "price": "Free",
         "detail": "Marriage compatibility",
+        "iconUrl": "/assets/images/services/kundli-matching.svg",
+        "iconAlt": "Kundli matching icon",
         "badge": "FREE",
         "actionLabel": "Check Now",
         "highlights": [
@@ -229,6 +245,8 @@
         "longDescription": "Reiki healing is a gentle energy practice designed to support emotional release, grounding, and inner balance. It is helpful when you feel energetically heavy, stressed, disconnected, or in need of calm spiritual support.",
         "price": "₹1,800",
         "detail": "Energy healing session",
+        "iconUrl": "/assets/images/services/reiki-healing.svg",
+        "iconAlt": "Reiki healing icon",
         "highlights": [
           "Calming energy support",
           "Emotional release and grounding",
@@ -247,6 +265,8 @@
         "longDescription": "In-person consultations are available for clients in Delhi NCR who prefer a more personal, face-to-face session. The session can be shaped around astrology, tarot, numerology, Reiki healing, or a combined consultation based on what you need clarity on.",
         "price": "₹3,100",
         "detail": "Delhi NCR only",
+        "iconUrl": "/assets/images/services/in-person.svg",
+        "iconAlt": "In-person consultation icon",
         "highlights": [
           "Personal consultation in Delhi NCR",
           "Flexible format based on your question",

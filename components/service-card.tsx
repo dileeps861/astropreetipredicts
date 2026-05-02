@@ -14,6 +14,8 @@ export function ServiceCard({
   description,
   price,
   detail,
+  iconUrl,
+  iconAlt,
   badge,
   actionLabel = "Inquire Now",
   whatsappTemplate,
@@ -53,7 +55,16 @@ export function ServiceCard({
         </span>
       ) : null}
       <div className="relative mx-auto mt-3 grid h-14 w-14 place-items-center rounded-full border border-gold/45 bg-[#fffaf0] text-xl font-semibold text-gold shadow-inner shadow-gold/10">
-        {title.slice(0, 1)}
+        {iconUrl ? (
+          <span
+            role="img"
+            aria-label={iconAlt || `${title} icon`}
+            className="h-11 w-11 bg-contain bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${iconUrl})` }}
+          />
+        ) : (
+          title.slice(0, 1)
+        )}
       </div>
       <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-gold">
         {detail}
