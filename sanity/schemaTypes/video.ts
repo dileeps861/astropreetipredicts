@@ -12,11 +12,33 @@ export const videoType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "provider",
+      title: "Provider",
+      type: "string",
+      initialValue: "instagram",
+      options: {
+        list: [
+          { title: "Instagram", value: "instagram" },
+          { title: "YouTube", value: "youtube" },
+        ],
+      },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "youtubeUrl",
       title: "YouTube URL",
       type: "url",
       validation: (rule) =>
-        rule.required().uri({
+        rule.uri({
+          scheme: ["http", "https"],
+        }),
+    }),
+    defineField({
+      name: "instagramUrl",
+      title: "Instagram Reel URL",
+      type: "url",
+      validation: (rule) =>
+        rule.uri({
           scheme: ["http", "https"],
         }),
     }),
@@ -24,7 +46,18 @@ export const videoType = defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "youtubeUrl",
+      provider: "provider",
+      youtubeUrl: "youtubeUrl",
+      instagramUrl: "instagramUrl",
+    },
+    prepare({ title, provider, youtubeUrl, instagramUrl }) {
+      return {
+        title,
+        subtitle:
+          provider === "youtube"
+            ? youtubeUrl || "YouTube"
+            : instagramUrl || "Instagram",
+      };
     },
   },
 });

@@ -5,7 +5,7 @@ import type { Video } from "@/lib/homepage-data";
 import { Modal } from "@/components/modal";
 import { SectionHeading } from "@/components/section-heading";
 import { VideoCard } from "@/components/video-card";
-import { getYouTubeEmbedUrl } from "@/lib/youtube";
+import { getVideoEmbed } from "@/lib/youtube";
 
 type VideosSectionProps = {
   eyebrow: string;
@@ -21,8 +21,8 @@ export function VideosSection({
   videos,
 }: VideosSectionProps) {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
-  const embedUrl = useMemo(
-    () => getYouTubeEmbedUrl(selectedVideo?.youtubeUrl),
+  const embed = useMemo(
+    () => getVideoEmbed(selectedVideo || undefined),
     [selectedVideo],
   );
 
@@ -48,17 +48,21 @@ export function VideosSection({
         title={selectedVideo?.title || "Video"}
         onClose={() => setSelectedVideo(null)}
       >
-        {embedUrl ? (
+        {embed ? (
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="aspect-video w-full"
-            src={embedUrl}
-            title={selectedVideo?.title || "YouTube video"}
+            className={
+              embed.provider === "instagram"
+                ? "mx-auto aspect-[9/16] max-h-[78vh] w-full max-w-sm"
+                : "aspect-video w-full"
+            }
+            src={embed.url}
+            title={selectedVideo?.title || "Video"}
           />
         ) : (
           <div className="grid aspect-video place-items-center px-6 text-center text-muted-foreground">
-            Add a valid YouTube URL in Sanity to preview this video.
+            Add a valid Instagram Reel or YouTube URL in Sanity to preview this video.
           </div>
         )}
       </Modal>

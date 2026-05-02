@@ -11,10 +11,14 @@ type VideoCardProps = Video & {
 export function VideoCard({
   title,
   duration,
+  provider,
   youtubeUrl,
+  instagramUrl,
   index,
   onPlay,
 }: VideoCardProps) {
+  const label = provider === "instagram" || instagramUrl ? "Instagram" : "YouTube";
+
   return (
     <motion.article
       className="overflow-hidden rounded-[1.5rem] border border-gold/15 bg-white/85 shadow-xl shadow-gold/5"
@@ -23,7 +27,9 @@ export function VideoCard({
     >
       <button
         type="button"
-        onClick={() => onPlay({ title, duration, youtubeUrl })}
+        onClick={() =>
+          onPlay({ title, duration, provider, youtubeUrl, instagramUrl })
+        }
         className="flex aspect-video w-full items-center justify-center bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(248,224,138,0.46)_58%,rgba(82,39,122,0.06))]"
       >
         <motion.span
@@ -41,7 +47,7 @@ export function VideoCard({
         <div className="mt-2 flex items-start justify-between gap-4">
           <h3 className="text-base font-semibold sm:text-lg">{title}</h3>
           <span className="text-sm text-muted-foreground">
-            {duration || "YouTube"}
+            {duration || label}
           </span>
         </div>
       </div>

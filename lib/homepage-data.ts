@@ -30,7 +30,9 @@ export type Review = {
 export type Video = {
   title: string;
   duration?: string;
+  provider?: "youtube" | "instagram";
   youtubeUrl?: string;
+  instagramUrl?: string;
 };
 
 export type CtaLink = {
@@ -255,21 +257,26 @@ export const videosSection = {
   eyebrow: "Videos",
   title: "A preview of the teaching style.",
   description:
-    "Static video previews for future educational content and guided astrology explainers.",
+    "Watch selected Instagram Reels and video previews for future astrology guidance.",
   videos: [
     {
-      title: "Understanding Your Moon Sign",
-      duration: "08:24",
-      youtubeUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      title: "Astropreeti Instagram Reel",
+      duration: "Instagram",
+      provider: "instagram",
+      instagramUrl:
+        "https://www.instagram.com/reel/DMQg4uyzhiV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
-      title: "Planetary Transits This Month",
-      duration: "12:10",
-      youtubeUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      title: "Vedic Guidance Reel",
+      duration: "Instagram",
+      provider: "instagram",
+      instagramUrl:
+        "https://www.instagram.com/reel/DNJAx8aTctb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     },
     {
       title: "How Compatibility Readings Work",
       duration: "06:45",
+      provider: "youtube",
       youtubeUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
     },
   ] satisfies Video[],
