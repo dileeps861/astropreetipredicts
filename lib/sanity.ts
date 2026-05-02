@@ -402,6 +402,7 @@ function mapAboutSection(about?: SanityAbout | null) {
   }
 
   const name = about.name || "Astrology";
+  const displayName = getFirstName(name);
   const stats: Stat[] = [
     {
       label: "Years of Practice",
@@ -419,11 +420,11 @@ function mapAboutSection(about?: SanityAbout | null) {
 
   return {
     ...defaultHomepageData.aboutSection,
-    title: `Meet ${name}`,
+    title: `Meet ${displayName}`,
     description: about.bio || defaultHomepageData.aboutSection.description,
-    profileLabel: name,
-    profileInitials: getInitials(name),
-    profileName: name,
+    profileLabel: displayName,
+    profileInitials: getInitials(displayName),
+    profileName: displayName,
     profileImageUrl: about.profileImageUrl,
     location: about.location || defaultHomepageData.aboutSection.location,
     details: sanitizeAboutDetails(about.details),
@@ -521,6 +522,10 @@ function getInitials(name: string) {
     .slice(0, 2)
     .map((part) => part[0]?.toUpperCase())
     .join("");
+}
+
+function getFirstName(name: string) {
+  return name.split(" ").filter(Boolean)[0] || name;
 }
 
 function loadLocalEnv(envPath: string) {

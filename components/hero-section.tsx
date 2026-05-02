@@ -117,9 +117,7 @@ function FeaturedDetailCard({
 }: {
   detail: FeaturedReading["details"][number];
 }) {
-  const className = detail.href
-    ? "rounded-2xl border border-[#25d366]/25 bg-[linear-gradient(135deg,rgba(237,252,244,0.96),rgba(248,224,138,0.58))] p-4 shadow-sm shadow-[#25d366]/10 transition hover:-translate-y-0.5 hover:border-[#25d366]/45"
-    : "rounded-2xl border border-gold/15 bg-[#fffaf0]/90 p-4";
+  const className = getFeaturedDetailClassName(detail);
   const content = (
     <>
       <p className="text-muted-foreground">{detail.label}</p>
@@ -144,4 +142,24 @@ function FeaturedDetailCard({
       </span>
     </a>
   );
+}
+
+function getFeaturedDetailClassName(
+  detail: FeaturedReading["details"][number],
+) {
+  if (detail.href) {
+    return "rounded-2xl border border-[#25d366]/25 bg-[linear-gradient(135deg,rgba(237,252,244,0.96),rgba(248,224,138,0.58))] p-4 shadow-sm shadow-[#25d366]/10 transition hover:-translate-y-0.5 hover:border-[#25d366]/45";
+  }
+
+  const label = detail.label.toLowerCase();
+
+  if (label.includes("starting")) {
+    return "rounded-2xl border border-gold/25 bg-[linear-gradient(135deg,rgba(255,250,240,0.98),rgba(248,224,138,0.68))] p-4 shadow-sm shadow-gold/10";
+  }
+
+  if (label.includes("best")) {
+    return "rounded-2xl border border-[#df5d8f]/20 bg-[linear-gradient(135deg,rgba(255,245,250,0.98),rgba(255,218,188,0.7),rgba(226,219,255,0.56))] p-4 shadow-sm shadow-[#df5d8f]/10";
+  }
+
+  return "rounded-2xl border border-gold/15 bg-[#fffaf0]/90 p-4";
 }
