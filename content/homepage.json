@@ -35,7 +35,7 @@
       "details": [
         {
           "label": "Starting from",
-          "value": "₹799"
+          "value": "₹333"
         },
         {
           "label": "Consulting format",
@@ -59,7 +59,7 @@
         "title": "Tarot",
         "description": "Intuitive card guidance for emotional clarity, decision-making, and the patterns influencing your current situation.",
         "longDescription": "Tarot readings help you slow down, understand the energy around a question, and see the choices available with more honesty. Each session is focused on practical clarity rather than fear-based prediction, so you leave with grounded next steps.",
-        "price": "₹1,100",
+        "price": "₹333",
         "detail": "Focused card reading",
         "iconUrl": "/assets/images/services/tarot.svg",
         "iconAlt": "Tarot reading icon",
@@ -78,7 +78,7 @@
           {
             "title": "Love Reading",
             "description": "Clarity around attraction, emotional availability, and the energy surrounding a romantic connection.",
-            "price": "₹799"
+            "price": "₹333"
           },
           {
             "title": "Relationship Reading",
@@ -96,7 +96,7 @@
         "title": "Vastu",
         "description": "Space and direction guidance for homes or workplaces, focused on energetic balance, flow, and practical remedies.",
         "longDescription": "Vastu consultation looks at how your space supports health, peace, prosperity, and day-to-day flow. The session focuses on clear observations and practical remedies that can be applied without creating unnecessary stress or major disruption.",
-        "price": "₹5,100",
+        "price": "₹1,111",
         "detail": "Home or workspace review",
         "iconUrl": "/assets/images/services/vastu.svg",
         "iconAlt": "Vastu consultation icon",
@@ -116,7 +116,7 @@
         "title": "Numerology",
         "description": "Name, date, and number analysis to understand personal patterns, favorable vibrations, and alignment options.",
         "longDescription": "Numerology helps decode the patterns connected with your name and date of birth. It can reveal personality tendencies, timing influences, favorable numbers, and alignment options for personal or professional decisions.",
-        "price": "₹1,500",
+        "price": "₹999",
         "detail": "Name and date analysis",
         "iconUrl": "/assets/images/services/numerology.svg",
         "iconAlt": "Numerology icon",
@@ -136,7 +136,7 @@
         "title": "Astrology",
         "description": "Birth chart and timing guidance for relationships, career, family, health themes, and important life decisions.",
         "longDescription": "Astrology consultations use birth chart patterns and timing indicators to bring structure to important life questions. The reading connects planetary influences with practical themes around relationships, career, family, health, and personal growth.",
-        "price": "₹2,100",
+        "price": "₹1,900",
         "detail": "Chart-based consultation",
         "iconUrl": "/assets/images/services/astrology.svg",
         "iconAlt": "Astrology icon",
@@ -244,7 +244,7 @@
         "title": "Reiki Healing",
         "description": "Gentle energy healing support for emotional release, grounding, balance, and spiritual restoration.",
         "longDescription": "Reiki healing is a gentle energy practice designed to support emotional release, grounding, and inner balance. It is helpful when you feel energetically heavy, stressed, disconnected, or in need of calm spiritual support.",
-        "price": "₹1,800",
+        "price": "₹500",
         "detail": "Energy healing session",
         "iconUrl": "/assets/images/services/reiki-healing.svg",
         "iconAlt": "Reiki healing icon",
@@ -264,7 +264,7 @@
         "title": "In-Person Consultation",
         "description": "Face-to-face spiritual guidance sessions in Delhi NCR for astrology, tarot, numerology, Reiki healing, or combined consultation needs.",
         "longDescription": "In-person consultations are available for clients in Delhi NCR who prefer a more personal, face-to-face session. The session can be shaped around astrology, tarot, numerology, Reiki healing, or a combined consultation based on what you need clarity on.",
-        "price": "₹3,100",
+        "price": "₹1,500",
         "detail": "Delhi NCR only",
         "iconUrl": "/assets/images/services/in-person.svg",
         "iconAlt": "In-person consultation icon",
