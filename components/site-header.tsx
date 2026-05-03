@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-20 border-b border-gold/15 bg-background/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-20 border-b border-white/55 bg-white/45 shadow-[0_10px_30px_rgba(82,55,24,0.06)] backdrop-blur-2xl">
       <PageContainer className="flex h-20 items-center justify-between">
         <a href="#" className="flex items-center gap-3">
           <Image
