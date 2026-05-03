@@ -22,7 +22,7 @@ export function ContactSection({
   return (
     <section
       id="contact"
-      className="rounded-[2rem] border border-gold/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(250,239,211,0.76))] p-7 shadow-2xl shadow-gold/10 sm:p-12"
+      className="material-box-strong rounded-[2rem] p-7 sm:p-12"
     >
       <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:items-center">
         <div>
@@ -32,7 +32,7 @@ export function ContactSection({
             description={description}
           />
           {formattedPhoneNumber && sanitizedPhoneNumber ? (
-            <div className="mt-7 inline-flex w-fit flex-col gap-3 rounded-2xl border border-[#1b8c4a]/20 bg-[linear-gradient(135deg,rgba(237,252,244,0.98),rgba(248,224,138,0.72))] px-5 py-4 shadow-xl shadow-gold/10 sm:flex-row sm:items-center">
+            <div className="material-raised mt-7 inline-flex w-fit flex-col gap-3 rounded-2xl border border-[#1b8c4a]/20 bg-[linear-gradient(135deg,rgba(237,252,244,0.98),rgba(248,224,138,0.72))] px-5 py-4 sm:flex-row sm:items-center">
               <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#1b8c4a]">
                 <PhoneIcon />
                 Call or WhatsApp
@@ -41,7 +41,7 @@ export function ContactSection({
                 href={`https://wa.me/${sanitizedPhoneNumber}`}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-white/90 px-4 py-2 text-lg font-semibold text-starlight shadow-sm shadow-gold/10 transition hover:text-[#1b8c4a]"
+                className="material-button material-button-light rounded-full px-4 py-2 text-lg font-semibold hover:text-[#1b8c4a]"
               >
                 {formattedPhoneNumber}
               </a>
@@ -81,9 +81,9 @@ function ContactLink({ href, label }: CtaLink) {
       href={href}
       target={isExternalLink ? "_blank" : undefined}
       rel={isExternalLink ? "noreferrer" : undefined}
-      className={`group flex min-h-24 items-center gap-4 rounded-2xl border px-5 py-4 text-left shadow-lg transition hover:-translate-y-0.5 ${style.className}`}
+      className={`material-raised material-box-interactive group flex min-h-24 items-center gap-4 rounded-2xl border px-5 py-4 text-left hover:-translate-y-0.5 ${style.className}`}
     >
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/85 shadow-sm">
+      <span className="material-chip grid h-11 w-11 shrink-0 place-items-center rounded-full">
         {style.icon}
       </span>
       <span>

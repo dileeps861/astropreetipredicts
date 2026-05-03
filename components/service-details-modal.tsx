@@ -36,7 +36,7 @@ export function ServiceDetailsModal({
           onClick={onClose}
         >
           <motion.div
-            className="w-full max-w-4xl overflow-hidden rounded-[2rem] border border-gold/20 bg-[#fffaf0] shadow-2xl shadow-gold/20"
+            className="material-box-strong w-full max-w-4xl overflow-hidden rounded-[2rem]"
             initial={{ opacity: 0, rotateX: -8, scale: 0.96, y: 20 }}
             animate={{ opacity: 1, rotateX: 0, scale: 1, y: 0 }}
             exit={{ opacity: 0, rotateX: 6, scale: 0.98, y: 10 }}
@@ -47,7 +47,7 @@ export function ServiceDetailsModal({
             <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
               <div className="bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(248,224,138,0.42))] p-7 sm:p-9">
                 {service.iconUrl ? (
-                  <div className="mb-6 grid h-16 w-16 place-items-center rounded-2xl border border-gold/20 bg-white/75 shadow-sm shadow-gold/10">
+                  <div className="material-chip mb-6 grid h-16 w-16 place-items-center rounded-2xl">
                     <span
                       role="img"
                       aria-label={service.iconAlt || `${service.title} icon`}
@@ -65,7 +65,7 @@ export function ServiceDetailsModal({
                 <p className="mt-5 text-base text-muted-foreground">
                   {service.longDescription || service.description}
                 </p>
-                <div className="mt-8 rounded-2xl border border-gold/15 bg-white/75 p-5">
+                <div className="material-box mt-8 rounded-2xl p-5">
                   <p className="text-sm text-muted-foreground">
                     Starting from
                   </p>
@@ -78,13 +78,13 @@ export function ServiceDetailsModal({
                     href={inquiryUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex h-12 items-center justify-center rounded-full bg-gold-soft px-6 text-sm font-semibold text-starlight shadow-lg shadow-gold/15 transition hover:-translate-y-0.5"
+                    className="material-button material-button-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold"
                   >
                     {service.actionLabel || "Inquire Now"}
                   </a>
                   <button
                     type="button"
-                    className="inline-flex h-12 items-center justify-center rounded-full border border-gold/25 bg-white/75 px-6 text-sm font-semibold text-starlight transition hover:border-gold/50 hover:text-gold"
+                    className="material-button material-button-light inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold hover:text-gold"
                     onClick={onClose}
                   >
                     Close
@@ -108,7 +108,7 @@ export function ServiceDetailsModal({
                       {service.subServices.map((subService) => (
                         <div
                           key={subService.title}
-                          className="rounded-2xl border border-gold/15 bg-white/75 p-4"
+                          className="material-box rounded-2xl p-4"
                         >
                           <div className="flex items-start justify-between gap-4">
                             <h4 className="font-semibold text-starlight">
@@ -145,7 +145,7 @@ function DetailList({ title, items }: { title: string; items: string[] }) {
         {items.map((item) => (
           <div
             key={item}
-            className="rounded-2xl border border-gold/15 bg-white/75 px-4 py-3 text-sm text-muted-foreground"
+            className="material-box rounded-2xl px-4 py-3 text-sm text-muted-foreground"
           >
             {item}
           </div>

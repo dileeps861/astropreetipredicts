@@ -40,7 +40,7 @@ export function ServiceCard({
 
   return (
     <motion.article
-      className="group relative flex min-h-[17rem] cursor-pointer flex-col overflow-hidden rounded-[1.15rem] border border-[#ead3a6] bg-[linear-gradient(145deg,#fffaf0_0%,#fff2cf_54%,#f7ddb4_100%)] p-5 shadow-[0_18px_36px_rgba(137,100,34,0.14),0_2px_0_rgba(255,255,255,0.85)_inset,0_-14px_22px_rgba(145,94,18,0.06)_inset] outline-none transition hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_24px_46px_rgba(137,100,34,0.18),0_2px_0_rgba(255,255,255,0.9)_inset,0_-14px_22px_rgba(145,94,18,0.07)_inset] focus-visible:border-gold/50 focus-visible:ring-2 focus-visible:ring-gold/20 sm:p-6"
+      className="material-box-strong material-box-interactive group relative flex min-h-[17rem] cursor-pointer flex-col overflow-hidden rounded-[1.15rem] p-5 outline-none hover:-translate-y-1 focus-visible:border-gold/50 focus-visible:ring-2 focus-visible:ring-gold/20 sm:p-6"
       role="button"
       tabIndex={0}
       whileHover={{ y: -3 }}
@@ -49,11 +49,11 @@ export function ServiceCard({
       onKeyDown={handleKeyDown}
     >
       {badge ? (
-        <span className="absolute right-5 top-5 rounded-full bg-white/65 px-2.5 py-1 text-xs font-semibold text-starlight shadow-sm shadow-gold/10">
+        <span className="material-chip absolute right-5 top-5 rounded-full px-2.5 py-1 text-xs font-semibold text-starlight">
           {badge}
         </span>
       ) : null}
-      <div className="relative mx-auto mt-1 grid h-14 w-14 place-items-center rounded-full border border-gold/35 bg-[linear-gradient(145deg,#fffdf7,#f6daa5)] text-xl font-semibold text-gold shadow-[0_10px_20px_rgba(137,100,34,0.14),0_2px_0_rgba(255,255,255,0.9)_inset]">
+      <div className="material-chip relative mx-auto mt-1 grid h-14 w-14 place-items-center rounded-full text-xl font-semibold text-gold">
         {iconUrl ? (
           <span
             role="img"
@@ -80,7 +80,7 @@ export function ServiceCard({
         </span>
         <button
           type="button"
-          className="inline-flex h-10 items-center justify-center rounded-md border border-gold/35 bg-transparent px-4 text-sm font-semibold text-starlight transition hover:border-gold/60 hover:bg-white/45 hover:text-gold"
+          className="material-button material-button-light inline-flex h-10 items-center justify-center rounded-md px-4 text-sm font-semibold hover:text-gold"
           onClick={(event) => {
             event.stopPropagation();
             onSelect?.();
@@ -92,7 +92,7 @@ export function ServiceCard({
           href={inquiryUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-10 items-center justify-center rounded-md border border-gold/35 bg-white/75 px-4 text-sm font-semibold text-gold shadow-[0_6px_14px_rgba(137,100,34,0.08)] transition group-hover:bg-gold-soft group-hover:text-starlight"
+          className="material-button material-button-primary inline-flex h-10 items-center justify-center rounded-md px-4 text-sm font-semibold"
           onClick={(event) => event.stopPropagation()}
         >
           {actionLabel}

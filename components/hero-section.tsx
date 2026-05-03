@@ -24,7 +24,7 @@ export function HeroSection({
     <section className="grid gap-12 py-6 lg:min-h-[680px] lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-10">
       <div className="flex flex-col justify-between">
         <div className="max-w-4xl">
-          <p className="inline-flex rounded-full border border-gold/20 bg-white/70 px-5 py-3 text-sm font-semibold text-gold shadow-sm shadow-gold/5">
+          <p className="material-chip inline-flex rounded-full px-5 py-3 text-sm font-semibold text-gold">
             {eyebrow}
           </p>
           <h1 className="mt-8 max-w-5xl text-5xl font-semibold text-starlight sm:text-7xl lg:text-7xl">
@@ -36,13 +36,13 @@ export function HeroSection({
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-3xl">
             <a
               href={primaryCta.href}
-              className="inline-flex h-16 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#f3d96f,#d7b33f)] px-7 text-base font-semibold text-starlight shadow-xl shadow-gold/15 transition hover:-translate-y-0.5"
+              className="material-button material-button-primary inline-flex h-16 items-center justify-center rounded-2xl px-7 text-base font-semibold"
             >
               {primaryCta.label}
             </a>
             <a
               href={secondaryCta.href}
-              className="inline-flex h-16 items-center justify-center rounded-2xl border border-gold/25 bg-white/80 px-7 text-base font-semibold text-starlight shadow-xl shadow-gold/10 transition hover:-translate-y-0.5 hover:border-gold/45 hover:text-gold"
+              className="material-button material-button-light inline-flex h-16 items-center justify-center rounded-2xl px-7 text-base font-semibold hover:text-gold"
             >
               {secondaryCta.label}
             </a>
@@ -52,7 +52,7 @@ export function HeroSection({
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-2xl border border-gold/15 bg-white/80 p-5 shadow-sm shadow-gold/5"
+              className="material-box rounded-2xl p-5"
             >
               <p className="text-2xl font-semibold text-gold">
                 {stat.value}
@@ -82,7 +82,7 @@ function FeaturedReadingPanel({
   details,
 }: FeaturedReading) {
   return (
-    <div className="relative flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[2rem] border border-gold/20 bg-white/90 p-6 shadow-2xl shadow-gold/10 sm:p-8">
+    <div className="material-box-strong relative flex min-h-[520px] flex-col justify-between overflow-hidden rounded-[2rem] p-6 sm:p-8">
       <div className="absolute inset-x-8 top-8 h-40 rounded-full bg-gold/10 blur-3xl" />
       <div>
         <p className="text-xs font-semibold uppercase text-gold">
@@ -148,18 +148,18 @@ function getFeaturedDetailClassName(
   detail: FeaturedReading["details"][number],
 ) {
   if (detail.href) {
-    return "rounded-2xl border border-[#25d366]/25 bg-[linear-gradient(135deg,rgba(237,252,244,0.96),rgba(248,224,138,0.58))] p-4 shadow-sm shadow-[#25d366]/10 transition hover:-translate-y-0.5 hover:border-[#25d366]/45";
+    return "material-box-interactive rounded-2xl border border-[#25d366]/25 bg-[linear-gradient(135deg,rgba(237,252,244,0.96),rgba(248,224,138,0.58))] p-4 transition hover:-translate-y-0.5 hover:border-[#25d366]/45";
   }
 
   const label = detail.label.toLowerCase();
 
   if (label.includes("starting")) {
-    return "rounded-2xl border border-gold/25 bg-[linear-gradient(135deg,rgba(255,250,240,0.98),rgba(248,224,138,0.68))] p-4 shadow-sm shadow-gold/10";
+    return "material-raised rounded-2xl border border-gold/25 bg-[linear-gradient(135deg,rgba(255,250,240,0.98),rgba(248,224,138,0.68))] p-4";
   }
 
   if (label.includes("best")) {
-    return "rounded-2xl border border-[#df5d8f]/20 bg-[linear-gradient(135deg,rgba(255,245,250,0.98),rgba(255,218,188,0.7),rgba(226,219,255,0.56))] p-4 shadow-sm shadow-[#df5d8f]/10";
+    return "material-raised rounded-2xl border border-[#df5d8f]/20 bg-[linear-gradient(135deg,rgba(255,245,250,0.98),rgba(255,218,188,0.7),rgba(226,219,255,0.56))] p-4";
   }
 
-  return "rounded-2xl border border-gold/15 bg-[#fffaf0]/90 p-4";
+  return "material-box rounded-2xl p-4";
 }

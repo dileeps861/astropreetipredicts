@@ -8,7 +8,7 @@ type ReviewCardProps = Review;
 export function ReviewCard({ name, city, rating, text }: ReviewCardProps) {
   return (
     <motion.article
-      className="rounded-[1.5rem] border border-gold/15 bg-white/85 p-6 shadow-xl shadow-gold/5 sm:p-7"
+      className="material-box material-box-interactive rounded-[1.5rem] p-6 sm:p-7"
       whileHover={{ y: -3 }}
       transition={{ duration: 0.22, ease: "easeOut" }}
     >
@@ -17,7 +17,7 @@ export function ReviewCard({ name, city, rating, text }: ReviewCardProps) {
           <h3 className="font-semibold">{name}</h3>
           <p className="text-sm text-muted-foreground">{city}</p>
         </div>
-        <span className="rounded-full bg-gold/10 px-3 py-1 text-sm font-semibold text-gold">
+        <span className="material-chip rounded-full px-3 py-1 text-sm font-semibold text-gold">
           {rating}
         </span>
       </div>

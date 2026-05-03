@@ -25,7 +25,7 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
           transition={{ duration: 0.2, ease: "easeOut" }}
         >
           <motion.div
-            className="w-full max-w-4xl overflow-hidden rounded-[1.5rem] border border-gold/20 bg-[#fffaf0] shadow-2xl shadow-gold/15"
+            className="material-box-strong w-full max-w-4xl overflow-hidden rounded-[1.5rem]"
             initial={{ opacity: 0, scale: 0.96, y: 18 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98, y: 10 }}
@@ -38,7 +38,7 @@ export function Modal({ isOpen, title, children, onClose }: ModalProps) {
               </h2>
               <button
                 aria-label="Close modal"
-                className="rounded-full border border-gold/20 bg-white/75 px-3 py-1 text-sm text-muted-foreground transition hover:border-gold/50 hover:text-gold"
+                className="material-button material-button-light rounded-full px-3 py-1 text-sm text-muted-foreground hover:text-gold"
                 type="button"
                 onClick={onClose}
               >

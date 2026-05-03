@@ -12,7 +12,7 @@ export function SiteHeader() {
             alt="Astropreeti Predicts logo"
             width={44}
             height={44}
-            className="rounded-xl border border-gold/20 bg-white"
+            className="material-chip rounded-xl"
             priority
           />
           <span className="text-base font-semibold text-gold sm:text-xl">

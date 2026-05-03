@@ -23,7 +23,7 @@ export function VideoCard({
 
   return (
     <motion.article
-      className="group overflow-hidden rounded-[1.5rem] border border-gold/15 bg-white/85 shadow-xl shadow-gold/5"
+      className="material-box material-box-interactive group overflow-hidden rounded-[1.5rem]"
       whileHover={{ y: -3 }}
       transition={{ duration: 0.22, ease: "easeOut" }}
     >
@@ -51,7 +51,7 @@ export function VideoCard({
         ) : null}
         <span className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,250,240,0.12),rgba(43,36,27,0.36))]" />
         <motion.span
-          className="relative flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 bg-white/90 text-sm font-semibold text-gold shadow-lg shadow-gold/10 sm:h-14 sm:w-14"
+          className="material-button material-button-light relative flex h-12 w-12 items-center justify-center rounded-full text-sm font-semibold text-gold sm:h-14 sm:w-14"
           whileHover={{ scale: 1.06 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         >

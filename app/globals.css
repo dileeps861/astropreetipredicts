@@ -74,3 +74,96 @@ button {
 html {
   scroll-behavior: smooth;
 }
+
+.material-box {
+  border: 1px solid rgba(212, 173, 98, 0.28);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 232, 0.9) 52%, rgba(247, 224, 187, 0.82) 100%);
+  box-shadow:
+    0 18px 38px rgba(137, 100, 34, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -14px 24px rgba(145, 94, 18, 0.045);
+}
+
+.material-box-strong {
+  border: 1px solid rgba(212, 173, 98, 0.34);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.92), transparent 32%),
+    linear-gradient(145deg, rgba(255, 250, 240, 0.98) 0%, rgba(255, 243, 211, 0.94) 56%, rgba(247, 218, 177, 0.9) 100%);
+  box-shadow:
+    0 24px 50px rgba(137, 100, 34, 0.16),
+    0 2px 0 rgba(255, 255, 255, 0.86) inset,
+    0 -18px 28px rgba(145, 94, 18, 0.055) inset;
+}
+
+.material-box-interactive {
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.material-box-interactive:hover {
+  border-color: rgba(159, 118, 25, 0.42);
+  box-shadow:
+    0 26px 52px rgba(137, 100, 34, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -14px 24px rgba(145, 94, 18, 0.055);
+  filter: saturate(1.02);
+}
+
+.material-raised {
+  box-shadow:
+    0 18px 36px rgba(137, 100, 34, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -12px 22px rgba(145, 94, 18, 0.04);
+}
+
+.material-button {
+  border: 1px solid rgba(212, 173, 98, 0.36);
+  box-shadow:
+    0 12px 22px rgba(137, 100, 34, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -8px 14px rgba(145, 94, 18, 0.055);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.material-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(159, 118, 25, 0.5);
+  box-shadow:
+    0 16px 28px rgba(137, 100, 34, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -8px 14px rgba(145, 94, 18, 0.065);
+}
+
+.material-button:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 8px 16px rgba(137, 100, 34, 0.12),
+    inset 0 2px 8px rgba(145, 94, 18, 0.09);
+}
+
+.material-button-primary {
+  background: linear-gradient(135deg, #f5dd7e 0%, #d9b443 52%, #c49324 100%);
+  color: #2b241b;
+}
+
+.material-button-light {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 232, 0.84));
+  color: #2b241b;
+}
+
+.material-chip {
+  border: 1px solid rgba(212, 173, 98, 0.26);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 248, 232, 0.78));
+  box-shadow:
+    0 8px 16px rgba(137, 100, 34, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
