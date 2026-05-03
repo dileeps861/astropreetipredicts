@@ -40,7 +40,7 @@ export function ServiceCard({
 
   return (
     <motion.article
-      className="group relative flex min-h-[18rem] cursor-pointer flex-col overflow-hidden rounded-lg border border-gold/25 bg-[#fff4dd] p-4 shadow-[0_14px_36px_rgba(159,118,25,0.07)] outline-none transition hover:-translate-y-0.5 hover:border-gold/50 hover:bg-[#fff8e8] focus-visible:border-gold/50 focus-visible:ring-2 focus-visible:ring-gold/20 sm:p-5"
+      className="group relative flex min-h-[17rem] cursor-pointer flex-col overflow-hidden rounded-[1.15rem] border border-[#ead3a6] bg-[linear-gradient(145deg,#fffaf0_0%,#fff2cf_54%,#f7ddb4_100%)] p-5 shadow-[0_18px_36px_rgba(137,100,34,0.14),0_2px_0_rgba(255,255,255,0.85)_inset,0_-14px_22px_rgba(145,94,18,0.06)_inset] outline-none transition hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_24px_46px_rgba(137,100,34,0.18),0_2px_0_rgba(255,255,255,0.9)_inset,0_-14px_22px_rgba(145,94,18,0.07)_inset] focus-visible:border-gold/50 focus-visible:ring-2 focus-visible:ring-gold/20 sm:p-6"
       role="button"
       tabIndex={0}
       whileHover={{ y: -3 }}
@@ -48,13 +48,12 @@ export function ServiceCard({
       onClick={onSelect}
       onKeyDown={handleKeyDown}
     >
-      <div className="pointer-events-none absolute inset-3 rounded-md border border-gold/25" />
       {badge ? (
-        <span className="absolute right-5 top-5 rounded-md bg-white/60 px-2.5 py-1 text-xs font-semibold text-starlight shadow-sm shadow-gold/5">
+        <span className="absolute right-5 top-5 rounded-full bg-white/65 px-2.5 py-1 text-xs font-semibold text-starlight shadow-sm shadow-gold/10">
           {badge}
         </span>
       ) : null}
-      <div className="relative mx-auto mt-3 grid h-14 w-14 place-items-center rounded-full border border-gold/45 bg-[#fffaf0] text-xl font-semibold text-gold shadow-inner shadow-gold/10">
+      <div className="relative mx-auto mt-1 grid h-14 w-14 place-items-center rounded-full border border-gold/35 bg-[linear-gradient(145deg,#fffdf7,#f6daa5)] text-xl font-semibold text-gold shadow-[0_10px_20px_rgba(137,100,34,0.14),0_2px_0_rgba(255,255,255,0.9)_inset]">
         {iconUrl ? (
           <span
             role="img"
@@ -66,7 +65,7 @@ export function ServiceCard({
           title.slice(0, 1)
         )}
       </div>
-      <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-gold">
+      <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#a97815]">
         {detail}
       </p>
       <h3 className="relative mt-3 text-xl font-semibold leading-tight text-starlight">
@@ -93,7 +92,7 @@ export function ServiceCard({
           href={inquiryUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex h-10 items-center justify-center rounded-md border border-gold/45 bg-white/70 px-4 text-sm font-semibold text-gold transition group-hover:bg-gold-soft group-hover:text-starlight"
+          className="inline-flex h-10 items-center justify-center rounded-md border border-gold/35 bg-white/75 px-4 text-sm font-semibold text-gold shadow-[0_6px_14px_rgba(137,100,34,0.08)] transition group-hover:bg-gold-soft group-hover:text-starlight"
           onClick={(event) => event.stopPropagation()}
         >
           {actionLabel}
